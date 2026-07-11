@@ -193,30 +193,28 @@
 
 /* Mobile Smartphones (Under 768px) */
 @media (max-width: 768px) {
-  .about {
-    padding: 60px 0;
+    .about {
+    padding: 80px 0;
   }
 
+  /* Unwind flex row completely, stacking blocks vertically */
   .about-container {
-    padding: 0 24px;
-    gap: 48px;
+    flex-direction: column;
+    gap: 60px;
   }
 
-  .about-content h3 {
-    font-size: 28px;
-  }
-
-  /* Break the 2x2 checklist block layout down into 1 solid vertical column */
-  .about-features {
-    grid-template-columns: 1fr;
-    gap: 12px;
-    margin-bottom: 35px;
-  }
-
-  /* Make button scale wider to serve as an easy thumb click touchpoint target */
-  .about-btn {
+  .about-image-section {
     width: 100%;
-    text-align: center;
+    max-width: 600px;
+  }
+
+  .about-image-section::before {
+    left: 0;
+    top: 20px; /* Realign framing box decoration for vertical column flows */
+  }
+
+  .about-content {
+    width: 100%;
   }
 }
 
