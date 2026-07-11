@@ -1,520 +1,237 @@
-/* ==== ABOUT SECTION ===== */
+/* ==========================================================================
+   About Section General Settings
+   ========================================================================== */
 
 .about {
-  padding: 100px 20px;
-  background: #f8fafc;
+  padding: 100px 0;
+  background-color: #ffffff; /* Clean white backdrop to contrast the dark hero/footer */
   overflow: hidden;
 }
 
 .about-container {
-  max-width: 1300px;
-  margin: auto;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
 
-  display: grid;
-  grid-template-columns: 1fr 1.1fr;
-  gap: 70px;
+  /* Flexbox side-by-side alignment */
+  display: flex;
   align-items: center;
+  gap: 80px; /* Generous breathing space between image and content */
 }
 
-/* ==========================================
-   IMAGE SECTION
-========================================== */
+/* ==========================================================================
+   Left Side: Image Framing Layout
+   ========================================================================== */
 
 .about-image-section {
+  flex: 1;
   position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+/* Subtle industrial accent block behind the main image */
+.about-image-section::before {
+  content: "";
+  position: absolute;
+  top: 30px;
+  left: -20px;
+  width: 100%;
+  height: 100%;
+  background-color: #f1f5f9; /* Soft light slate background */
+  border-radius: 12px;
+  z-index: 1;
 }
 
 .about-image {
   width: 100%;
-  height: 600px;
+  max-width: 550px;
+  height: auto;
   object-fit: cover;
-  border-radius: 20px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.1);
+  position: relative;
+  z-index: 2; /* Sits above the accent background box */
+  transition: transform 0.5s ease;
 }
 
-.experience-box {
-  position: absolute;
-  bottom: 30px;
-  left: -20px;
-  background: #f59e0b;
-  color: #fff;
-  padding: 25px 35px;
-  border-radius: 15px;
-  text-align: center;
-  box-shadow: 0 10px 25px rgba(245, 158, 11, 0.35);
+.about-image:hover {
+  transform: scale(1.02); /* Elegant micro-zoom scale */
 }
 
-.experience-box h3 {
-  font-size: 2.5rem;
-  margin-bottom: 5px;
-}
+/* ==========================================================================
+   Right Side: Typography & Copywriting Details
+   ========================================================================== */
 
-.experience-box span {
-  font-size: 14px;
-  font-weight: 600;
+.about-content {
+  flex: 1.1; /* Gives text a tiny bit more horizontal runway space */
+  display: flex;
+  flex-direction: column;
 }
-
-/* ===== CONTENT SECTION========== */
 
 .about-tag {
-  display: inline-block;
-  padding: 10px 20px;
-  background: rgba(245, 158, 11, 0.12);
-  color: #f59e0b;
-  border-radius: 30px;
   font-size: 14px;
-  font-weight: 600;
-  margin-bottom: 20px;
+  font-weight: 700;
+  color: #f59e0b; /* Amber accent theme badge */
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  display: inline-block;
 }
 
 .about-content h3 {
-  font-size: 3rem;
-  line-height: 1.2;
-  color: #111827;
-  margin-bottom: 25px;
+  font-size: 42px;
+  font-weight: 800;
+  color: #0f172a; /* Strong readable slate tone */
+  line-height: 1.25;
+  margin-bottom: 24px;
 }
 
 .about-content h3 span {
-  color: #f59e0b;
+  color: #f59e0b; /* Emphasizes the primary keywords */
+  display: block;
 }
 
 .about-content p {
-  color: #64748b;
-  font-size: 1rem;
-  line-height: 1.8;
-  margin-bottom: 18px;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #475569; /* Balanced gray body text readability */
+  margin-bottom: 20px;
 }
 
-/* ==========================================
-   FEATURES
-========================================== */
+/* ==========================================================================
+   Features Checklist Layout (2x2 Grid Arrangement)
+   ========================================================================== */
 
 .about-features {
-  margin-top: 35px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
+  gap: 16px 20px;
+  margin: 28px 0 40px 0;
 }
 
 .feature-item {
-  padding: 15px 18px;
-  background: #fff;
-  border-radius: 10px;
-  font-weight: 500;
-  color: #1f2937;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
-  transition: 0.3s;
-}
-
-.feature-item:hover {
-  transform: translateY(-3px);
-}
-
-/* ==========================================
-   STATS
-========================================== */
-
-.about-stats {
-  margin-top: 40px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-.stat-box {
-  background: #fff;
-  padding: 25px 15px;
-  text-align: center;
-  border-radius: 15px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-  transition: 0.3s;
-}
-
-.stat-box:hover {
-  transform: translateY(-5px);
-}
-
-.stat-box h3 {
-  font-size: 2rem;
-  color: #f59e0b;
-  margin-bottom: 8px;
-}
-
-.stat-box span {
-  color: #64748b;
   font-size: 15px;
+  font-weight: 600;
+  color: #0f172a;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
-/* ==========================================
-   BUTTON
-========================================== */
+/* Stylizing the inline checkmarks */
+.feature-item {
+  color: #1e293b;
+}
+
+/* ==========================================================================
+   Action Call-to-Action Button
+   ========================================================================== */
 
 .about-btn {
-  display: inline-block;
-  margin-top: 35px;
-  padding: 15px 35px;
-  background: #f59e0b;
-  color: white;
-  text-decoration: none;
+  align-self: flex-start; /* Keeps the button standard width instead of full block width */
+  background-color: #0f172a; /* Dark solid structure accent */
+  color: #ffffff;
+  padding: 14px 32px;
+  font-size: 15px;
   font-weight: 600;
-  border-radius: 8px;
-  transition: 0.3s;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
 }
 
 .about-btn:hover {
-  background: #d97706;
+  background-color: #f59e0b; /* Flips over directly into core amber style accents */
+  color: #0f172a;
   transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.3);
 }
 
-/* =====================================================
-   LARGE MONITOR / 4K VIEW (1600px+)
-===================================================== */
+/* ==========================================================================
+   RESPONSIVE MEDIA QUERIES (Fluid Layout Control)
+   ========================================================================== */
 
-@media (min-width: 1600px) {
-  .about {
-    padding: 140px 40px;
-  }
-
+/* Medium Desktops & Large Displays (Under 1200px) */
+@media (max-width: 1200px) {
   .about-container {
-    max-width: 1600px;
-    gap: 100px;
+    gap: 40px;
+    padding: 0 32px;
   }
 
-  .about-image {
-    height: 700px;
-  }
-
-  .about-content h2 {
-    font-size: 4rem;
-  }
-
-  .about-content p {
-    font-size: 1.15rem;
-  }
-
-  .experience-box {
-    left: -30px;
-    bottom: 50px;
-
-    padding: 35px 45px;
-  }
-
-  .experience-box h3 {
-    font-size: 3rem;
-  }
-
-  .feature-item {
-    font-size: 17px;
-    padding: 20px;
-  }
-
-  .stat-box h3 {
-    font-size: 2.5rem;
+  .about-content h3 {
+    font-size: 36px;
   }
 }
 
-/* =====================================================
-   DESKTOP / LAPTOP
-   1200px - 1599px
-===================================================== */
-
-@media (max-width: 1599px) {
-  .about-container {
-    max-width: 1200px;
-    gap: 50px;
-  }
-
-  .about-image {
-    height: 550px;
-  }
-
-  .about-content h2 {
-    font-size: 3.2rem;
-  }
-}
-
-/* =====================================================
-   SMALL LAPTOP
-   992px - 1199px
-===================================================== */
-
-@media (max-width: 1199px) {
-  .about {
-    padding: 90px 30px;
-  }
-
-  .about-container {
-    grid-template-columns: 1fr 1fr;
-    gap: 35px;
-  }
-
-  .about-image {
-    height: 500px;
-  }
-
-  .about-content h2 {
-    font-size: 2.7rem;
-  }
-
-  .about-features {
-    gap: 12px;
-  }
-
-  .feature-item {
-    font-size: 14px;
-  }
-
-  .about-stats {
-    gap: 15px;
-  }
-
-  .stat-box {
-    padding: 20px 10px;
-  }
-}
-
-/* =====================================================
-   TABLET LANDSCAPE
-   769px - 991px
-===================================================== */
-
+/* Tablets & Small Horizontal Views (Under 991px) */
 @media (max-width: 991px) {
   .about {
-    padding: 80px 25px;
+    padding: 80px 0;
   }
 
+  /* Unwind flex row completely, stacking blocks vertically */
   .about-container {
-    grid-template-columns: 1fr;
-    gap: 50px;
-    text-align: center;
+    flex-direction: column;
+    gap: 60px;
   }
 
   .about-image-section {
-    max-width: 650px;
-    margin: auto;
+    width: 100%;
+    max-width: 600px;
   }
 
-  .about-image {
-    height: 500px;
-  }
-
-  .experience-box {
-    left: 20px;
-    bottom: 20px;
+  .about-image-section::before {
+    left: 0;
+    top: 20px; /* Realign framing box decoration for vertical column flows */
   }
 
   .about-content {
-    max-width: 750px;
-    margin: auto;
-  }
-
-  .about-content h2 {
-    font-size: 2.8rem;
-  }
-
-  .about-features {
-    max-width: 600px;
-    margin: 35px auto;
-  }
-
-  .about-stats {
-    max-width: 650px;
-    margin: 40px auto;
-  }
-
-  .about-btn {
-    margin-top: 25px;
+    width: 100%;
   }
 }
 
-/* =====================================================
-   TABLET PORTRAIT
-   600px - 768px
-===================================================== */
-
+/* Mobile Smartphones (Under 768px) */
 @media (max-width: 768px) {
   .about {
-    padding: 70px 20px;
+    padding: 60px 0;
   }
 
-  .about-image {
-    height: 420px;
+  .about-container {
+    padding: 0 24px;
+    gap: 48px;
   }
 
-  .experience-box {
-    padding: 18px 25px;
+  .about-content h3 {
+    font-size: 28px;
   }
 
-  .experience-box h3 {
-    font-size: 2rem;
+  /* Break the 2x2 checklist block layout down into 1 solid vertical column */
+  .about-features {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-bottom: 35px;
   }
 
-  .experience-box span {
-    font-size: 12px;
+  /* Make button scale wider to serve as an easy thumb click touchpoint target */
+  .about-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Extra Tight Screen Widths (Under 480px) */
+@media (max-width: 480px) {
+  .about-container {
+    padding: 0 16px;
   }
 
-  .about-tag {
-    font-size: 13px;
-  }
-
-  .about-content h2 {
-    font-size: 2.2rem;
-    line-height: 1.25;
+  .about-content h3 {
+    font-size: 24px;
   }
 
   .about-content p {
     font-size: 15px;
-  }
-
-  .about-features {
-    grid-template-columns: 1fr;
-  }
-
-  .feature-item {
-    padding: 15px;
-  }
-
-  .about-stats {
-    grid-template-columns: 1fr;
-  }
-
-  .stat-box {
-    max-width: 350px;
-    width: 100%;
-    margin: auto;
-  }
-
-  .about-btn {
-    width: 100%;
-    max-width: 300px;
-  }
-}
-
-/* =====================================================
-   MOBILE
-   480px - 599px
-===================================================== */
-
-@media (max-width: 599px) {
-  .about {
-    padding: 60px 15px;
-  }
-
-  .about-image {
-    height: 350px;
-    border-radius: 15px;
-  }
-
-  .experience-box {
-    position: relative;
-
-    left: 0;
-    bottom: auto;
-    margin-top: 20px;
-  }
-
-  .about-content h2 {
-    font-size: 1.9rem;
-  }
-
-  .about-content p {
-    font-size: 14px;
-    line-height: 1.7;
-  }
-
-  .about-features {
-    margin-top: 25px;
-  }
-
-  .feature-item {
-    font-size: 14px;
-  }
-
-  .stat-box h3 {
-    font-size: 1.8rem;
-  }
-
-  .about-btn {
-    padding: 13px 25px;
-  }
-}
-
-/* =====================================================
-   EXTRA SMALL MOBILE
-   BELOW 480px
-===================================================== */
-
-@media (max-width: 479px) {
-  .about {
-    padding: 50px 12px;
-  }
-
-  .about-image {
-    height: 280px;
-  }
-
-  .about-content h2 {
-    font-size: 1.6rem;
-  }
-
-  .about-content p {
-    font-size: 13px;
-  }
-
-  .about-tag {
-    padding: 8px 15px;
-  }
-
-  .experience-box {
-    padding: 15px;
-  }
-
-  .experience-box h3 {
-    font-size: 1.7rem;
-  }
-
-  .feature-item {
-    font-size: 13px;
-    padding: 13px;
-  }
-
-  .stat-box {
-    padding: 18px 10px;
-  }
-
-  .stat-box span {
-    font-size: 13px;
-  }
-
-  .about-btn {
-    font-size: 14px;
-    width: 100%;
-  }
-}
-
-/* =====================================================
-   VERY SMALL DEVICES
-   BELOW 320px
-===================================================== */
-
-@media (max-width: 319px) {
-  .about-image {
-    height: 230px;
-  }
-
-  .about-content h2 {
-    font-size: 1.4rem;
-  }
-
-  .about-content p {
-    font-size: 12px;
-  }
-
-  .feature-item {
-    font-size: 12px;
-  }
-
-  .about-btn {
-    font-size: 12px;
+    line-height: 1.6;
   }
 }

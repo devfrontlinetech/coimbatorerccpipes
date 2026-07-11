@@ -37,7 +37,7 @@ const About = () => {
             alt="RCC Pipe Manufacturing"
             className="about-image"
           />
-{/* 
+          {/* 
           <div className="experience-box">
             <h3>20+</h3>
             <span>Years Experience</span>
