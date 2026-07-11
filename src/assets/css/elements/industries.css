@@ -1,172 +1,286 @@
-/* =========================================
-   Industries Section - Premium Infrastructure Style
-   ========================================= */
+/* ==========================================================
+   INDUSTRIES SECTION
+========================================================== */
 
 :root {
-  --ind-bg: #ffffff; /* Pure clean white to contrast with product section */
-  --ind-surface: #f8fafc; /* Ultra-soft slate surface for cards */
-  --ind-text-main: #0f172a; /* Deep industrial slate primary */
-  --ind-text-muted: #475569; /* Clean secondary read body text */
-  --ind-accent: #ed9a01; /* Professional engineering blue */
-  --ind-accent-light: #e0f2fe; /* Soft blue badge backdrop */
-  --ind-border: #e2e8f0; /* Structured clean layout lines */
+  --ind-bg: #ffffff;
+  --ind-surface: #f8fafc;
+  --ind-text-main: #0f172a;
+  --ind-text-muted: #475569;
+  --ind-accent: #ed9a01;
+  --ind-accent-light: #fff4de;
+  --ind-border: #e2e8f0;
+
   --ind-radius: 12px;
   --ind-radius-sm: 8px;
-  --ind-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
   --ind-shadow:
-    0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+    0 4px 6px rgba(15, 23, 42, 0.05), 0 2px 4px rgba(15, 23, 42, 0.03);
+
+  --ind-shadow-hover: 0 18px 35px rgba(15, 23, 42, 0.08);
+
+  --ind-transition: 0.35s ease;
 }
 
-/* Base Layout Wrapper */
+/* ==========================================================
+   SECTION
+========================================================== */
+
 .industries {
-  background-color: var(--ind-bg);
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 5.5rem 1.5rem;
-  font-family:
-    "Inter",
-    -apple-system,
-    BlinkMacSystemFont,
-    sans-serif;
+  padding: 90px 24px;
+  background: var(--ind-bg);
+  overflow: hidden;
 }
 
-/* Header Architecture */
+/* ==========================================================
+HEADER
+========================================================== */
+
 .industries-header {
+  max-width: 700px;
+
+  margin: 0 auto 60px;
+
   text-align: center;
-  max-width: 650px;
-  margin: 0 auto 4rem auto;
 }
 
 .industries-header h2 {
-  font-size: 2.5rem;
+  font-size: 42px;
+
   font-weight: 800;
+
   color: var(--ind-text-main);
-  letter-spacing: -0.03em;
-  margin-bottom: 0.85rem;
-  position: relative;
+
+  margin-bottom: 15px;
 }
 
 .industries-header p {
-  font-size: 1.05rem;
-  line-height: 1.6;
   color: var(--ind-text-muted);
+
+  font-size: 17px;
+
+  line-height: 1.7;
 }
 
-/* Grid Layout Matrix */
+/* ==========================================================
+GRID
+========================================================== */
+
 .industries-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 2rem;
+
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+  gap: 30px;
 }
 
-/* The Professional Sector Card */
+/* ==========================================================
+CARD
+========================================================== */
+
 .industry-card {
-  background-color: var(--ind-surface);
+  background: var(--ind-surface);
+
   border: 1px solid var(--ind-border);
-  border-radius: var(--ind-radius);
-  padding: 2.25rem 2rem;
-  position: relative;
-  overflow: hidden;
-  box-shadow: var(--ind-shadow);
-  transition: var(--ind-transition);
+
+  border-radius: 12px;
+
+  padding: 35px 30px;
+
   display: flex;
+
   flex-direction: column;
+
+  transition: 0.35s;
+
+  position: relative;
+
+  overflow: hidden;
+
+  box-shadow: var(--ind-shadow);
 }
 
-/* Hidden decorative top indicator bar that reveals on hover */
 .industry-card::before {
   content: "";
+
   position: absolute;
-  top: 0;
+
   left: 0;
+
+  top: 0;
+
   width: 100%;
+
   height: 4px;
-  background-color: var(--ind-accent);
+
+  background: var(--ind-accent);
+
   transform: scaleX(0);
+
   transform-origin: left;
-  transition: var(--ind-transition);
+
+  transition: 0.35s;
 }
 
-/* Card Interaction Overrides */
 .industry-card:hover {
-  transform: translateY(-5px);
-  background-color: #ffffff;
-  border-color: rgba(2, 132, 199, 0.25);
-  box-shadow:
-    0 20px 25px -5px rgba(15, 23, 42, 0.06),
-    0 8px 10px -6px rgba(15, 23, 42, 0.02);
+  transform: translateY(-6px);
+
+  box-shadow: var(--ind-shadow-hover);
+
+  border-color: #d6e4f1;
+
+  background: #fff;
 }
 
 .industry-card:hover::before {
   transform: scaleX(1);
 }
 
-/* Geometric Icon Compartment */
+/* ==========================================================
+ICON
+========================================================== */
+
 .industry-icon {
-  width: 56px;
-  height: 56px;
-  background-color: var(--ind-accent-light);
+  width: 60px;
+
+  height: 60px;
+
+  border-radius: 10px;
+
+  background: var(--ind-accent-light);
+
   color: var(--ind-accent);
-  border-radius: var(--ind-radius-sm);
+
   display: flex;
+
   align-items: center;
+
   justify-content: center;
-  margin-bottom: 1.5rem;
-  transition: var(--ind-transition);
+
+  margin-bottom: 25px;
+
+  transition: 0.35s;
 }
 
-/* React Icon Specific Sizing */
 .industry-icon svg {
-  font-size: 1.5rem;
-  transition: var(--ind-transition);
+  font-size: 28px;
 }
 
-/* Smooth Icon pop transformation inside the active card */
 .industry-card:hover .industry-icon {
-  background-color: var(--ind-accent);
-  color: #ffffff;
-  transform: rotate(-4deg) scale(1.05);
+  background: var(--ind-accent);
+
+  color: #fff;
+
+  transform: scale(1.08);
 }
 
-/* Title Elements */
+/* ==========================================================
+TEXT
+========================================================== */
+
 .industry-card h3 {
-  font-size: 1.3rem;
+  font-size: 22px;
+
   font-weight: 700;
+
   color: var(--ind-text-main);
-  margin: 0 0 0.75rem 0;
-  letter-spacing: -0.01em;
+
+  margin-bottom: 14px;
+
   line-height: 1.4;
 }
 
-/* Body Narrative text */
 .industry-card p {
-  font-size: 0.92rem;
-  line-height: 1.6;
   color: var(--ind-text-muted);
-  margin: 0;
+
+  line-height: 1.8;
+
+  flex: 1;
 }
 
-/* =========================================
-   Responsive Viewport Management
-   ========================================= */
+/* ==========================================================
+1200px
+========================================================== */
 
-@media screen and (max-width: 992px) {
-  .industries-grid {
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1.5rem;
+@media (max-width: 1200px) {
+  .industries {
+    padding: 80px 22px;
   }
 }
 
-@media screen and (max-width: 768px) {
+/* ==========================================================
+992px
+========================================================== */
+
+@media (max-width: 992px) {
+  .industries-header h2 {
+    font-size: 36px;
+  }
+
+  .industries-grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+
+    gap: 24px;
+  }
+}
+
+/* ==========================================================
+768px
+========================================================== */
+
+@media (max-width: 768px) {
   .industries {
-    padding: 4rem 1.25rem;
+    padding: 70px 18px;
+  }
+
+  .industries-header {
+    margin-bottom: 45px;
   }
 
   .industries-header h2 {
-    font-size: 2rem;
+    font-size: 32px;
+  }
+
+  .industries-grid {
+    grid-template-columns: 1fr;
   }
 
   .industry-card {
-    padding: 1.75rem 1.5rem;
+    padding: 28px 24px;
+  }
+}
+
+/* ==========================================================
+480px
+========================================================== */
+
+@media (max-width: 480px) {
+  .industries {
+    padding: 60px 15px;
+  }
+
+  .industries-header h2 {
+    font-size: 28px;
+  }
+
+  .industry-card {
+    padding: 24px 20px;
+  }
+
+  .industry-card h3 {
+    font-size: 20px;
+  }
+
+  .industry-icon {
+    width: 55px;
+
+    height: 55px;
+  }
+
+  .industry-icon svg {
+    font-size: 24px;
   }
 }

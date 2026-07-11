@@ -1,47 +1,63 @@
+/* ==========================================================
+   HEADER
+========================================================== */
+
 .concretepipe-header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 9999;
-  transition: all 0.3s ease;
+  transition: all 0.35s ease;
   background: transparent;
 }
 
 .concretepipe-header.scrolled {
-  background: rgba(0, 0, 0, 0.85);
-  backdrop-filter: blur(12px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  background: rgba(15, 23, 42, 0.92);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
 }
+
+/* ==========================================================
+   NAVBAR
+========================================================== */
 
 .concretepipe-navbar {
   max-width: 1400px;
   margin: auto;
-  padding: 3px 40px;
+  padding: 8px 32px;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  position: relative;
 }
 
-/* LOGO */
+/* ==========================================================
+   LOGO
+========================================================== */
 
 .concretepipe-logo {
   display: flex;
   align-items: center;
-  gap: 15px;
-  padding: 10px 0;
+  gap: 18px;
 }
 
 .concretepipe-logo-img {
-  width: 200px;
+  width: 190px;
+  display: block;
   cursor: pointer;
 }
 
+/* ==========================================================
+   LOCATION
+========================================================== */
+
 .concretepipe-location {
   display: flex;
-  /* flex-direction: column; */
-  gap: 20px;
+  align-items: center;
+  gap: 18px;
 }
 
 .location-row {
@@ -51,93 +67,123 @@
 
   color: #fff;
   font-size: 14px;
+  font-weight: 500;
 }
 
 .location-icon,
 .phone-icon {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
   color: #f59e0b;
   border: 1px solid #f59e0b;
-  padding: 6px;
-  border-radius: 50%;
+
+  transition: 0.3s;
 }
+
 .location-icon:hover,
 .phone-icon:hover {
   background: #f59e0b;
   color: #111827;
-  transform: translateY(-2px);
-  transition: all 0.3s ease;
 }
 
-/* NAVIGATION */
+/* ==========================================================
+   NAVIGATION
+========================================================== */
 
 .concretepipe-nav-links {
   display: flex;
   align-items: center;
-  gap: 35px;
+  gap: 32px;
+
   list-style: none;
 }
 
 .concretepipe-nav-link-btn {
   background: transparent;
   border: none;
+
   color: #fff;
-  font-size: 16px;
+
+  font-size: 15px;
   font-weight: 600;
+
   cursor: pointer;
   position: relative;
+
+  transition: 0.3s;
 }
 
 .concretepipe-nav-link-btn::after {
   content: "";
-  position: absolute;
-  left: 0;
-  bottom: -5px;
 
-  width: 0%;
+  position: absolute;
+
+  left: 0;
+  bottom: -6px;
+
+  width: 0;
   height: 2px;
 
   background: #f59e0b;
-  transition: 0.3s;
-}
 
-.concretepipe-nav-link-btn:hover::after {
-  width: 100%;
+  transition: 0.3s;
 }
 
 .concretepipe-nav-link-btn:hover {
   color: #f59e0b;
 }
 
+.concretepipe-nav-link-btn:hover::after {
+  width: 100%;
+}
+
+/* ==========================================================
+   BUTTON
+========================================================== */
+
 .header-quote-btn {
-  background-color: #f59e0b;
-  border: none;
+  background: #f59e0b;
+
   color: #0f172a;
-  padding: 10px 22px;
-  border-radius: 6px;
+
+  padding: 11px 22px;
+
+  border-radius: 8px;
+
   font-size: 14px;
   font-weight: 600;
-  transition: all 0.3s ease;
+
+  transition: 0.3s;
 }
+
 .header-quote-btn:hover {
-  background-color: #d97706;
+  background: #d97706;
+
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
 }
-/* ==============================
-   HAMBURGER MENU
-================================ */
+
+/* ==========================================================
+   MENU BUTTON
+========================================================== */
 
 .header-menu {
   display: none;
 
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
 
   border-radius: 50%;
 
-  background: #111;
+  background: #111827;
 
-  color: white;
+  color: #fff;
 
   align-items: center;
   justify-content: center;
@@ -147,127 +193,185 @@
   cursor: pointer;
 
   transition: 0.3s;
-
-  z-index: 3000;
 }
 
 .header-menu:hover {
-  background: #c87920;
+  background: #f59e0b;
 
-  transform: rotate(10deg);
+  color: #111827;
 }
-/* ======= RESPONSIVE MEDIA QUERIES ====== */
 
-/* 1. Large Screen Adjustments (Shrink paddings and gaps slightly) */
-@media (max-width: 1200px) {
+/* ==========================================================
+   1400px
+========================================================== */
+
+@media (max-width: 1400px) {
   .concretepipe-navbar {
-    padding: 3px 20px;
-  }
-  .concretepipe-nav-links {
-    gap: 20px;
-  }
-  .concretepipe-location {
-    gap: 15px;
+    padding: 8px 24px;
   }
 }
 
-@media (max-width: 1024px) {
+/* ==========================================================
+   1200px
+========================================================== */
+
+@media (max-width: 1200px) {
   .concretepipe-location {
     display: none;
   }
+
+  .concretepipe-nav-links {
+    gap: 22px;
+  }
 }
 
-@media (max-width: 860px) {
+/* ==========================================================
+   992px
+========================================================== */
+
+@media (max-width: 992px) {
   .header-menu {
     display: flex;
   }
 
-  .concretepipe-navbar {
-    padding: 10px 20px;
-  }
-
-  .concretepipe-logo-img {
-    width: 204px;
-  }
-
   .header-right {
     margin-left: auto;
-    margin-right: 15px;
+    margin-right: 14px;
   }
 
   .concretepipe-nav-links {
     position: absolute;
-    top: 74%;
-    right: 0;
-    width: 46%;
-    background: #0f172a;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0;
-    padding: 0;
 
-    /* Smooth height slide-down mechanism */
-    max-height: 0;
+    top: 100%;
+    right: 0;
+
+    width: 320px;
+    max-width: 100%;
+
+    background: #0f172a;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 0;
+
     overflow: hidden;
+
+    max-height: 0;
+
     opacity: 0;
+
     visibility: hidden;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+
+    transition: 0.35s;
+
+    border-bottom-left-radius: 10px;
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
   }
 
-  /* Triggered via your React 'menuOpen' state class change */
   .concretepipe-nav-links.active {
-    max-height: 400px; /* Secure height boundary to contain your links */
+    max-height: 450px;
+
     opacity: 1;
+
     visibility: visible;
-    padding: 15px 0;
-    border-bottom-left-radius: 5px;
-    border-top-left-radius: 5px;
+
+    padding: 10px 0;
   }
 
   .concretepipe-nav-links li {
     width: 100%;
   }
 
-  /* Large, easily clickable block targets for fingers */
   .concretepipe-nav-link-btn {
     display: block;
+
     width: 100%;
-    padding: 16px 24px;
+
+    padding: 18px 24px;
+
     text-align: left;
-    font-size: 18px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
-    transition:
-      background 0.2s,
-      color 0.2s;
+
+    font-size: 16px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   }
 
   .concretepipe-nav-link-btn:hover {
-    background: rgba(
-      245,
-      158,
-      11,
-      0.08
-    ); /* Soft amber background flash on tap */
-    padding-left: 30px; /* Slight offset interactive animation on hover/tap */
+    padding-left: 30px;
+
+    background: rgba(245, 158, 11, 0.08);
   }
 
-  /* Disable desktop absolute line animation on mobile viewports */
   .concretepipe-nav-link-btn::after {
     display: none;
   }
 }
 
-/* 4. Small Mobile Adjustments (Optimize for tight screen spaces) */
-@media (max-width: 480px) {
-  /* Scale down padding and font sizes slightly so nothing truncates */
-  .header-quote-btn {
-    padding: 8px 14px;
-    font-size: 13px;
+/* ==========================================================
+   768px
+========================================================== */
+
+@media (max-width: 768px) {
+  .concretepipe-navbar {
+    padding: 10px 18px;
   }
 
   .concretepipe-logo-img {
+    width: 170px;
+  }
+
+  .header-quote-btn {
+    display: none;
+  }
+
+  .concretepipe-nav-links {
+    width: 280px;
+  }
+}
+
+/* ==========================================================
+   576px
+========================================================== */
+
+@media (max-width: 576px) {
+  .concretepipe-logo-img {
     width: 155px;
+  }
+
+  .header-menu {
+    width: 40px;
+    height: 40px;
+
+    font-size: 18px;
+  }
+
+  .concretepipe-nav-links {
+    width: 250px;
+  }
+}
+
+/* ==========================================================
+   400px
+========================================================== */
+
+@media (max-width: 400px) {
+  .concretepipe-navbar {
+    padding: 10px 15px;
+  }
+
+  .concretepipe-logo-img {
+    width: 145px;
+  }
+
+  .concretepipe-nav-links {
+    width: 100%;
+
+    right: 0;
+
+    border-radius: 0;
   }
 }

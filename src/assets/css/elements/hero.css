@@ -1,231 +1,354 @@
-/* ==========================================================================
-   Hero Container & Video Settings
-   ========================================================================== */
+/* ==========================================================
+   HERO SECTION
+========================================================== */
 
 .hero {
   position: relative;
   width: 100%;
-  height: 100vh; /* Full screen height */
-  min-height: 650px;
+  min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   align-items: center;
   overflow: hidden;
-  background-color: #0f172a; /* Dark slate fallback color */
+  background: #0f172a;
 }
 
-/* Background Cinematic Video */
+/* ==========================================================
+   VIDEO
+========================================================== */
+
 .hero-video {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  inset: 0;
+
   width: 100%;
   height: 100%;
+
   object-fit: cover;
-  transform: translate(-50%, -50%);
+
   z-index: 1;
 }
 
-/* Overlay covering the video for premium readability */
+/* ==========================================================
+   OVERLAY
+========================================================== */
+
 .hero-overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
+
   background: linear-gradient(
-    to right,
-    rgba(15, 23, 42, 0.85) 40%,
-    rgba(15, 23, 42, 0.4) 100%
+    90deg,
+    rgba(15, 23, 42, 0.88) 30%,
+    rgba(15, 23, 42, 0.55) 70%,
+    rgba(15, 23, 42, 0.35) 100%
   );
+
   z-index: 2;
 }
 
-/* ==========================================================================
-   Content Layout (Left-Aligned Design)
-   ========================================================================== */
+/* ==========================================================
+   CONTAINER
+========================================================== */
 
 .hero-container {
   position: relative;
-  width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 40px;
-  z-index: 3; /* Places content safely over overlay */
+
+  z-index: 3;
+
+  width: min(1400px, 100%);
+
+  margin: auto;
+
+  padding: 130px 32px 80px;
 }
 
 .hero-left {
-  max-width: 680px; /* Restricts content from stretching completely across screen */
+  max-width: 700px;
 }
 
-/* Typography styling */
+/* ==========================================================
+   TYPOGRAPHY
+========================================================== */
+
 .hero-left h1 {
   font-size: 56px;
+
   font-weight: 800;
-  color: #ffffff;
-  line-height: 1.2;
-  margin-bottom: 20px;
-  letter-spacing: -0.5px;
+
+  line-height: 1.15;
+
+  color: #fff;
+
+  margin-bottom: 24px;
 }
 
 .hero-left h1 span {
   display: block;
+
+  color: #f59e0b;
 }
 
 .hero-left p {
   font-size: 18px;
-  line-height: 1.6;
-  color: #cbd5e1; /* Elegant light-gray readable text */
-  margin-bottom: 35px;
+
+  line-height: 1.8;
+
+  color: #d1d5db;
+
+  margin-bottom: 36px;
+
+  max-width: 620px;
 }
 
-/* ==========================================================================
-   Grid Features Layout
-   ========================================================================== */
+/* ==========================================================
+   FEATURES
+========================================================== */
 
 .hero-features {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Clean 2x2 grid block */
-  gap: 16px 24px;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 18px;
+
   margin-bottom: 40px;
 }
 
 .hero-features div {
-  font-size: 16px;
-  font-weight: 600;
-  color: #f59e0b; /* Amber/Orange checkmarks and text accent */
   display: flex;
+
   align-items: center;
+
+  gap: 10px;
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  color: #f59e0b;
 }
 
-/* ==========================================================================
-   Action Call Button Frameworks
-   ========================================================================== */
+/* ==========================================================
+   BUTTONS
+========================================================== */
 
 .hero-buttons {
   display: flex;
-  align-items: center;
-  gap: 20px;
+
+  flex-wrap: wrap;
+
+  gap: 18px;
 }
 
-/* Base button properties */
 .hero-buttons .btn {
-  display: inline-block;
-  padding: 14px 28px;
-  font-size: 16px;
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 15px 30px;
+
+  border-radius: 8px;
+
   font-weight: 600;
-  border-radius: 6px;
+
+  font-size: 15px;
+
   text-decoration: none;
-  cursor: pointer;
-  text-align: center;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  transition: 0.3s;
 }
 
-/* Filled Button (Explore Products) */
 .hero-buttons .btn:not(.btn-outline) {
-  background-color: #f59e0b;
+  background: #f59e0b;
+
   color: #0f172a;
-  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.3);
 }
 
 .hero-buttons .btn:not(.btn-outline):hover {
-  background-color: #d97706;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4);
+  background: #d97706;
+
+  transform: translateY(-3px);
 }
 
-/* Outline Button (Get Quote) */
 .hero-buttons .btn-outline {
-  background-color: transparent;
-  color: #ffffff;
-  border: 2px solid #ffffff;
+  border: 2px solid #fff;
+
+  color: #fff;
 }
 
 .hero-buttons .btn-outline:hover {
-  background-color: #ffffff;
+  background: #fff;
+
   color: #0f172a;
-  transform: translateY(-2px);
 }
 
-/* ==========================================================================
-   RESPONSIVE MEDIA QUERIES (Fluid Adaptations)
-   ========================================================================== */
+/* ==========================================================
+   1400px
+========================================================== */
 
-/* Laptops & Small Desktops (Under 1200px) */
+@media (max-width: 1400px) {
+  .hero-container {
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+}
+
+/* ==========================================================
+   1200px
+========================================================== */
+
 @media (max-width: 1200px) {
   .hero-left h1 {
-    font-size: 46px;
+    font-size: 48px;
   }
 
   .hero-left p {
-    font-size: 16px;
+    font-size: 17px;
   }
 }
 
-/* Tablets (Under 991px) */
-@media (max-width: 991px) {
+/* ==========================================================
+   992px
+========================================================== */
+
+@media (max-width: 992px) {
   .hero {
-    height: auto;
-    padding: 140px 0 80px 0; /* Add top padding to accommodate your fixed navbar */
-    min-height: 100vh;
+    align-items: center;
   }
 
-  /* Softly gradient backplate covering full video width on smaller tablets */
   .hero-overlay {
-    background: rgba(15, 23, 42, 0.75);
+    background: rgba(15, 23, 42, 0.78);
   }
 
   .hero-container {
-    padding: 0 32px;
-    margin-top: -157px;
+    padding: 120px 24px 70px;
   }
 
   .hero-left {
-    max-width: 100%; /* Spans full horizontal bounds */
+    max-width: 100%;
+  }
+
+  .hero-left h1 {
+    font-size: 42px;
   }
 }
 
-/* Mobile Screen Sizes (Under 768px) */
+/* ==========================================================
+   768px
+========================================================== */
+
 @media (max-width: 768px) {
   .hero {
-    padding: 120px 0 60px 0;
-    width: 109%;
+    min-height: auto;
   }
 
-  .hero-left h1 {
-    font-size: 36px;
-  }
-
-  /* Unwind into a vertical clean feature list stack */
-  .hero-features {
-    grid-template-columns: 1fr;
-    gap: 12px;
-    margin-bottom: 35px;
-  }
-
-  /* Make buttons expand elegantly to fit the screen */
-  .hero-buttons {
-    flex-direction: column;
-    gap: 14px;
-    width: 100%;
-  }
-
-  .hero-buttons .btn {
-    width: 68% !important;
-  }
-}
-
-/* Extremely Small Smartphones (Under 480px) */
-@media (max-width: 480px) {
   .hero-container {
-    padding: 0 20px;
+    padding: 110px 20px 60px;
+  }
+
+  .hero-left {
+    text-align: center;
   }
 
   .hero-left h1 {
-    font-size: 32px;
+    font-size: 34px;
+  }
+
+  .hero-left h1 span {
+    display: inline;
   }
 
   .hero-left p {
     font-size: 15px;
-    line-height: 1.5;
+
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-features {
+    grid-template-columns: 1fr;
+
+    gap: 14px;
+
+    max-width: 320px;
+
+    margin: 0 auto 35px;
+
+    text-align: left;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+
+    align-items: center;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+
+    max-width: 260px;
+  }
+}
+
+/* ==========================================================
+   576px
+========================================================== */
+
+@media (max-width: 576px) {
+  .hero-container {
+    padding: 100px 18px 50px;
+  }
+
+  .hero-left h1 {
+    font-size: 30px;
+
+    line-height: 1.25;
+  }
+
+  .hero-left p {
+    font-size: 14px;
+  }
+}
+
+/* ==========================================================
+   400px
+========================================================== */
+
+@media (max-width: 400px) {
+  .hero-container {
+    padding: 95px 15px 45px;
+  }
+
+  .hero-left h1 {
+    font-size: 26px;
+  }
+
+  .hero-buttons .btn {
+    max-width: 100%;
+  }
+}
+
+/* ==========================================================
+   LARGE SCREENS
+========================================================== */
+
+@media (min-width: 1600px) {
+  .hero-container {
+    max-width: 1500px;
+  }
+
+  .hero-left {
+    max-width: 760px;
+  }
+
+  .hero-left h1 {
+    font-size: 64px;
+  }
+
+  .hero-left p {
+    font-size: 20px;
   }
 }

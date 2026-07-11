@@ -1,143 +1,146 @@
-/* ==========================================================================
-   Contact Section Styles
-   ========================================================================== */
+/* ==========================================================
+   CONTACT SECTION
+========================================================== */
 
 .contact {
-  padding: 80px 20px;
-  background-color: #f8fafc; /* Ultra-light slate background */
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  width: 100%;
+  padding: 100px 0;
+  background: #f8fafc;
+  overflow: hidden;
 }
 
-/* Header Context */
+.contact-container {
+  width: min(1400px, 100%);
+  margin: auto;
+  padding: 0 40px;
+
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 70px;
+  align-items: start;
+}
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
 .contact-header {
   text-align: center;
-  max-width: 700px;
-  margin: 0 auto 60px auto;
+  max-width: 720px;
+  margin: 0 auto 70px;
 }
 
 .contact-header span {
   display: inline-block;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 700;
-  letter-spacing: 0.1em;
-  color: #f59e0b; /* Amber accent */
-  margin-bottom: 12px;
+  letter-spacing: 2px;
+  color: #f59e0b;
+  margin-bottom: 15px;
 }
 
 .contact-header h2 {
-  font-size: 2.5rem;
+  font-size: 44px;
   font-weight: 800;
-  color: #0f172a; /* Deep slate gray */
-  line-height: 1.2;
-  margin-bottom: 16px;
+  color: #0f172a;
+  margin-bottom: 20px;
 }
 
 .contact-header p {
-  font-size: 1.1rem;
+  font-size: 17px;
   color: #64748b;
-  line-height: 1.6;
+  line-height: 1.8;
 }
 
-/* Container Structure */
-.contact-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 50px;
-  align-items: start;
-}
-
-/* ==========================================================================
-   Left Column: Contact Info
-   ========================================================================== */
+/* ==========================================================
+   CONTACT INFO
+========================================================== */
 
 .contact-info h3 {
-  font-size: 1.75rem;
+  font-size: 34px;
   color: #0f172a;
-  margin-bottom: 16px;
-  font-weight: 700;
+  margin-bottom: 20px;
 }
 
 .contact-info > p {
   color: #64748b;
-  line-height: 1.6;
-  margin-bottom: 40px;
+  line-height: 1.8;
+  margin-bottom: 45px;
 }
 
 .contact-item {
   display: flex;
-  align-items: flex-start;
   gap: 20px;
+  align-items: flex-start;
   margin-bottom: 30px;
 }
 
-/* React Icons Wrapper */
 .contact-item svg {
-  font-size: 1.25rem;
-  color: #f59e0b;
-  background-color: rgba(245, 158, 11, 0.1);
-  padding: 12px;
+  width: 58px;
+  height: 58px;
+  padding: 16px;
   border-radius: 50%;
+  background: rgba(245, 158, 11, 0.12);
+  color: #f59e0b;
   flex-shrink: 0;
+  transition: 0.35s;
+}
+
+.contact-item:hover svg {
+  background: #f59e0b;
+  color: #fff;
+  transform: translateY(-4px);
 }
 
 .contact-item h4 {
-  font-size: 1.1rem;
+  font-size: 20px;
   color: #0f172a;
-  margin: 0 0 6px 0;
-  font-weight: 600;
+  margin-bottom: 8px;
 }
 
 .contact-item p {
   color: #64748b;
-  margin: 0 0 4px 0;
-  line-height: 1.5;
+  line-height: 1.7;
+  margin: 0;
 }
 
-/* ==========================================================================
-   Right Column: Form Block
-   ========================================================================== */
+/* ==========================================================
+   FORM
+========================================================== */
 
 .contact-form-box {
-  background: #ffffff;
-  padding: 40px;
-  border-radius: 12px;
-  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.05), 
-              0 8px 10px -6px rgba(15, 23, 42, 0.05);
+  background: #fff;
+  padding: 45px;
+  border-radius: 18px;
   border: 1px solid #e2e8f0;
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.07);
 }
 
 .contact-form-box h3 {
-  font-size: 1.75rem;
+  font-size: 34px;
   color: #0f172a;
-  margin-bottom: 24px;
-  font-weight: 700;
+  margin-bottom: 30px;
 }
 
 .contact-form-box form {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 22px;
 }
 
-/* Inputs & Textarea Styling */
 .contact-form-box input,
 .contact-form-box textarea {
   width: 100%;
-  padding: 14px 16px;
-  border: 1px solid #cbd5e1;
-  border-radius: 6px;
-  font-size: 1rem;
-  color: #0f172a;
-  background-color: #f8fafc;
-  outline: none;
-  transition: all 0.3s ease;
-  font-family: inherit;
-  box-sizing: border-box;
+  padding: 16px 18px;
+  border-radius: 10px;
+  border: 1px solid #dbe3ed;
+  background: #f8fafc;
+  font-size: 16px;
+  transition: 0.35s;
 }
 
 .contact-form-box textarea {
+  min-height: 180px;
   resize: vertical;
 }
 
@@ -146,90 +149,249 @@
   color: #94a3b8;
 }
 
-/* Dynamic Focus Ring */
 .contact-form-box input:focus,
 .contact-form-box textarea:focus {
   border-color: #f59e0b;
-  background-color: #ffffff;
+  background: #fff;
   box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.15);
 }
 
-/* Modernized Custom WhatsApp Button */
+/* ==========================================================
+   BUTTON
+========================================================== */
+
 .contact-whatsapp-btn {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  background-color: #25d366; /* Official WhatsApp Green */
-  color: #ffffff;
-  border: none;
-  padding: 14px 28px;
-  font-size: 1rem;
-  font-weight: 600;
-  border-radius: 6px;
+  gap: 12px;
+
+  background: #25d366;
+  color: #fff;
+
+  padding: 16px 30px;
+
+  border-radius: 8px;
+
+  font-size: 16px;
+  font-weight: 700;
+
   cursor: pointer;
-  transition: all 0.3s ease;
+
+  transition: 0.35s;
 }
 
 .contact-whatsapp-btn:hover {
-  background-color: #1ebd57;
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+  background: #1ebe57;
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(37, 211, 102, 0.3);
 }
 
 .contact-whatsapp-btn svg {
-  font-size: 1.25rem;
+  font-size: 22px;
 }
 
-/* ==========================================================================
-   Google Map Embed Section
-   ========================================================================== */
+/* ==========================================================
+   MAP
+========================================================== */
 
 .map-section {
-  margin-top: 60px;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-  border: 1px solid #e2e8f0;
+  width: min(1400px, 100%);
+  margin: 70px auto 0;
+  padding: 0 40px;
 }
 
 .map-section iframe {
   width: 100%;
-  display: block;
+  height: 500px;
+  border: 0;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
 }
 
-/* ==========================================================================
-   Responsive Breakpoints
-   ========================================================================== */
+/* ==========================================================
+   1400px
+========================================================== */
 
-@media (max-width: 992px) {
+@media (max-width: 1400px) {
+  .contact-container,
+  .map-section {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+/* ==========================================================
+   1200px
+========================================================== */
+
+@media (max-width: 1200px) {
   .contact-container {
-    grid-template-columns: 1fr;
     gap: 50px;
   }
 
   .contact-header h2 {
-    font-size: 2rem;
+    font-size: 40px;
   }
 }
 
+/* ==========================================================
+   992px
+========================================================== */
+
+@media (max-width: 992px) {
+  .contact {
+    padding: 80px 0;
+  }
+
+  .contact-container {
+    grid-template-columns: 1fr;
+
+    gap: 60px;
+  }
+
+  .contact-info {
+    text-align: center;
+  }
+
+  .contact-item {
+    justify-content: center;
+
+    text-align: left;
+  }
+
+  .contact-header h2 {
+    font-size: 36px;
+  }
+}
+
+/* ==========================================================
+   768px
+========================================================== */
+
+@media (max-width: 768px) {
+  .contact {
+    padding: 70px 0;
+  }
+
+  .contact-container,
+  .map-section {
+    padding: 0 22px;
+  }
+
+  .contact-header {
+    margin-bottom: 50px;
+  }
+
+  .contact-header h2 {
+    font-size: 32px;
+  }
+
+  .contact-form-box {
+    padding: 30px;
+  }
+
+  .map-section iframe {
+    height: 400px;
+  }
+}
+
+/* ==========================================================
+   576px
+========================================================== */
+
 @media (max-width: 576px) {
   .contact {
-    padding: 60px 16px;
+    padding: 60px 0;
+  }
+
+  .contact-container,
+  .map-section {
+    padding: 0 18px;
   }
 
   .contact-form-box {
     padding: 24px;
   }
 
+  .contact-form-box h3 {
+    font-size: 28px;
+  }
+
+  .contact-info h3 {
+    font-size: 28px;
+  }
+
   .contact-header h2 {
-    font-size: 1.75rem;
+    font-size: 28px;
+  }
+
+  .contact-item {
+    gap: 15px;
+  }
+
+  .contact-item svg {
+    width: 50px;
+    height: 50px;
+    padding: 14px;
+  }
+
+  .contact-whatsapp-btn {
+    width: 100%;
   }
 
   .map-section iframe {
-    height: 300px;
+    height: 320px;
+  }
+}
+
+/* ==========================================================
+   400px
+========================================================== */
+
+@media (max-width: 400px) {
+  .contact-header h2 {
+    font-size: 24px;
+  }
+
+  .contact-form-box h3 {
+    font-size: 24px;
+  }
+
+  .contact-info h3 {
+    font-size: 24px;
+  }
+
+  .contact-item h4 {
+    font-size: 17px;
+  }
+
+  .contact-item p {
+    font-size: 14px;
+  }
+}
+
+/* ==========================================================
+   LARGE SCREENS
+========================================================== */
+
+@media (min-width: 1600px) {
+  .contact-container,
+  .map-section {
+    max-width: 1500px;
+  }
+
+  .contact-header h2 {
+    font-size: 52px;
+  }
+
+  .contact-info h3,
+  .contact-form-box h3 {
+    font-size: 40px;
+  }
+
+  .contact-header p {
+    font-size: 18px;
   }
 }
