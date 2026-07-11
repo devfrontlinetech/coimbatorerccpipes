@@ -331,10 +331,11 @@
 @media (max-width: 768px) {
   .hero {
     padding: 110px 20px 60px;
+    width: 105%;
   }
 
   .hero-container {
-    width: 100%;
+    width: 66%;
   }
 
   .hero-left h1 {
