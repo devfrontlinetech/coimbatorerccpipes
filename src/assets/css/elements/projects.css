@@ -255,13 +255,11 @@
 
 .projects-bottom {
   background: #0f172a;
-
   border-radius: 20px;
-
-  padding: 70px 40px!important;
-
+  width: 90%;
+  margin: auto;
+  padding: 70px 40px !important;
   text-align: center;
-
   color: #fff;
 }
 
