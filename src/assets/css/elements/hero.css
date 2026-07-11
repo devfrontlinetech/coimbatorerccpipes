@@ -1,483 +1,229 @@
-/* === HERO SECTION ===*/
+/* ==========================================================================
+   Hero Container & Video Settings
+   ========================================================================== */
 
 .hero {
   position: relative;
-  height: 100vh;
+  width: 100%;
+  height: 100vh; /* Full screen height */
+  min-height: 650px;
   display: flex;
   align-items: center;
-  justify-content: center;
   overflow: hidden;
+  background-color: #0f172a; /* Dark slate fallback color */
 }
 
-/* === VIDEO BACKGROUND === */
-
+/* Background Cinematic Video */
 .hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+/* Overlay covering the video for premium readability */
+.hero-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  z-index: -2;
-}
-
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-
   background: linear-gradient(
-    135deg,
-    rgba(20, 26, 40, 0.33),
-    rgba(15, 23, 42, 0.85)
+    to right,
+    rgba(15, 23, 42, 0.85) 40%,
+    rgba(15, 23, 42, 0.4) 100%
   );
-
-  z-index: -1;
+  z-index: 2;
 }
 
-/* === CONTAINER === */
+/* ==========================================================================
+   Content Layout (Left-Aligned Design)
+   ========================================================================== */
 
 .hero-container {
-  width: 80%;
-  max-width: 1280px;
-  
+  position: relative;
+  width: 100%;
+  max-width: 1400px;
   margin: 0 auto;
-
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 50px;
-
-  align-items: center;
+  padding: 0 40px;
+  z-index: 3; /* Places content safely over overlay */
 }
 
-/* === LEFT SIDE === */
-
-.hero-tagline {
-  display: inline-block;
-
-  padding: 10px 20px;
-
-  background: rgba(245, 158, 11, 0.15);
-  border: 1px solid rgba(245, 158, 11, 0.3);
-
-  color: #f59e0b;
-
-  border-radius: 30px;
-  font-size: 14px;
-  font-weight: 600;
-
-  margin-bottom: 25px;
+.hero-left {
+  max-width: 680px; /* Restricts content from stretching completely across screen */
 }
 
+/* Typography styling */
 .hero-left h1 {
-  font-size: 3rem;
-  line-height: 1.1;
+  font-size: 56px;
   font-weight: 800;
-  margin-top: 100px;
-  margin-bottom: 25px;
+  color: #ffffff;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  letter-spacing: -0.5px;
 }
 
 .hero-left h1 span {
-  color: #f59e0b;
+  display: block;
 }
 
 .hero-left p {
-  max-width: 650px;
-
-  font-size: 1.1rem;
-  line-height: 1.8;
-
-  color: #d1d5db;
-
+  font-size: 18px;
+  line-height: 1.6;
+  color: #cbd5e1; /* Elegant light-gray readable text */
   margin-bottom: 35px;
 }
 
-/* === FEATURES === */
+/* ==========================================================================
+   Grid Features Layout
+   ========================================================================== */
 
 .hero-features {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-
-  gap: 15px;
-  margin-bottom: 35px;
+  grid-template-columns: repeat(2, 1fr); /* Clean 2x2 grid block */
+  gap: 16px 24px;
+  margin-bottom: 40px;
 }
 
 .hero-features div {
-  background: rgba(255, 255, 255, 0.08);
-
-  padding: 14px 18px;
-
-  border-radius: 10px;
-
-  color: #fff;
-  font-size: 15px;
-  font-weight: 500;
+  font-size: 16px;
+  font-weight: 600;
+  color: #f59e0b; /* Amber/Orange checkmarks and text accent */
+  display: flex;
+  align-items: center;
 }
 
-/* === BUTTONS === */
+/* ==========================================================================
+   Action Call Button Frameworks
+   ========================================================================== */
 
 .hero-buttons {
   display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-}
-
-.btn {
-  display: inline-flex;
   align-items: center;
-  justify-content: center;
-
-  padding: 14px 30px;
-
-  border-radius: 8px;
-
-  text-decoration: none;
-  font-weight: 600;
-
-  transition: 0.3s ease;
-}
-
-.btn {
-  background: #f59e0b;
-  color: #fff;
-}
-
-.btn:hover {
-  background: #d97706;
-  transform: translateY(-2px);
-}
-
-.btn-outline {
-  background: transparent;
-  color: #fff;
-  border: 2px solid #fff;
-}
-
-.btn-outline:hover {
-  background: #fff;
-  color: #111827;
-}
-
-/* === RIGHT SIDE === */
-/* 
-.hero-right {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
 
-.hero-card {
-  padding: 35px 20px;
-
+/* Base button properties */
+.hero-buttons .btn {
+  display: inline-block;
+  padding: 14px 28px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 6px;
+  text-decoration: none;
+  cursor: pointer;
   text-align: center;
-
-  background: rgba(255, 255, 255, 0.08);
-
-  backdrop-filter: blur(10px);
-
-  border: 1px solid rgba(255, 255, 255, 0.1);
-
-  border-radius: 18px;
-
-  transition: 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.hero-card:hover {
-  transform: translateY(-5px);
-  border-color: rgba(245, 158, 11, 0.4);
+/* Filled Button (Explore Products) */
+.hero-buttons .btn:not(.btn-outline) {
+  background-color: #f59e0b;
+  color: #0f172a;
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.3);
 }
 
-.hero-card h2 {
-  font-size: 2.7rem;
-  color: #f59e0b;
-  margin-bottom: 10px;
+.hero-buttons .btn:not(.btn-outline):hover {
+  background-color: #d97706;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4);
 }
 
-.hero-card span {
-  color: #e5e7eb;
-  font-size: 14px;
-  font-weight: 500;
-} */
+/* Outline Button (Get Quote) */
+.hero-buttons .btn-outline {
+  background-color: transparent;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+}
 
-/* ===
-   TABLET
-   === */
+.hero-buttons .btn-outline:hover {
+  background-color: #ffffff;
+  color: #0f172a;
+  transform: translateY(-2px);
+}
 
-/* ========  LARGE DESKTOP / MONITOR  =========== */
+/* ==========================================================================
+   RESPONSIVE MEDIA QUERIES (Fluid Adaptations)
+   ========================================================================== */
 
-@media (min-width: 1600px) {
-  .hero-container {
-    width: 75%;
-    max-width: 1500px;
-    gap: 80px;
-  }
-
+/* Laptops & Small Desktops (Under 1200px) */
+@media (max-width: 1200px) {
   .hero-left h1 {
-    font-size: 4.5rem;
+    font-size: 46px;
   }
 
   .hero-left p {
-    font-size: 1.25rem;
-    max-width: 750px;
-  }
-
-  .hero-tagline {
     font-size: 16px;
-    padding: 12px 25px;
-  }
-
-  .hero-features div {
-    font-size: 17px;
-    padding: 18px 22px;
-  }
-
-  .btn {
-    padding: 16px 38px;
-    font-size: 17px;
   }
 }
 
-/* ======== LAPTOP VIEW ================ */
-
-@media (max-width: 1599px) {
-  .hero-container {
-    width: 85%;
-    gap: 50px;
-  }
-
-  .hero-left h1 {
-    font-size: 3.8rem;
-  }
-}
-
-/* ===== SMALL LAPTOP / DESKTOP  ====== */
-
-@media (max-width: 1199px) {
-  .hero-container {
-    width: 90%;
-    gap: 35px;
-  }
-
-  .hero-left h1 {
-    font-size: 3.2rem;
-  }
-
-  .hero-left p {
-    font-size: 1rem;
-  }
-
-  .hero-features {
-    gap: 12px;
-  }
-
-  .hero-features div {
-    font-size: 14px;
-  }
-
-  .btn {
-    padding: 13px 25px;
-  }
-}
-
-/* =======TABLET LANDSCAPE  (769px - 991px)============= */
-
+/* Tablets (Under 991px) */
 @media (max-width: 991px) {
   .hero {
     height: auto;
+    padding: 140px 0 80px 0; /* Add top padding to accommodate your fixed navbar */
     min-height: 100vh;
-    padding: 120px 30px 80px;
+  }
+
+  /* Softly gradient backplate covering full video width on smaller tablets */
+  .hero-overlay {
+    background: rgba(15, 23, 42, 0.75);
   }
 
   .hero-container {
-    width: 100%;
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: 40px;
-    margin-top: -250px;
+    padding: 0 32px;
   }
 
-  .hero-left h1 {
-    font-size: 3rem;
-  }
-
-  .hero-left p {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 650px;
-  }
-
-  .hero-features {
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .hero-buttons {
-    justify-content: center;
-  }
-
-  .hero-right {
-    max-width: 600px;
-    width: 100%;
-    margin: auto;
+  .hero-left {
+    max-width: 100%; /* Spans full horizontal bounds */
   }
 }
 
-/* ==========================================================
-   TABLET PORTRAIT
-   (600px - 768px)
-========================================================== */
-
+/* Mobile Screen Sizes (Under 768px) */
 @media (max-width: 768px) {
   .hero {
-    padding: 110px 20px 60px;
-    width: 105%;
-  }
-
-  .hero-container {
-    width: 66%;
+    padding: 120px 0 60px 0;
   }
 
   .hero-left h1 {
-    font-size: 2.5rem;
-    line-height: 1.2;
+    font-size: 36px;
+  }
+
+  /* Unwind into a vertical clean feature list stack */
+  .hero-features {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-bottom: 35px;
+  }
+
+  /* Make buttons expand elegantly to fit the screen */
+  .hero-buttons {
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+  }
+}
+
+/* Extremely Small Smartphones (Under 480px) */
+@media (max-width: 480px) {
+  .hero-container {
+    padding: 0 20px;
+  }
+
+  .hero-left h1 {
+    font-size: 32px;
   }
 
   .hero-left p {
     font-size: 15px;
-    line-height: 1.7;
-  }
-
-  .hero-tagline {
-    font-size: 13px;
-    padding: 9px 18px;
-  }
-
-  .hero-features {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-
-  .hero-features div {
-    padding: 15px;
-  }
-
-  .hero-buttons {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .btn {
-    width: 100%;
-    max-width: 350px;
-  }
-
-  .hero-right {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* ==========================================================
-   MOBILE
-   (480px - 599px)
-========================================================== */
-
-@media (max-width: 599px) {
-  .hero {
-    padding: 100px 15px 50px;
-  }
-
-  .hero-left h1 {
-    font-size: 2rem;
-  }
-
-  .hero-left p {
-    font-size: 14px;
-  }
-
-  .hero-tagline {
-    font-size: 12px;
-  }
-
-  .hero-features div {
-    font-size: 14px;
-  }
-
-  .btn {
-    padding: 13px 20px;
-    font-size: 14px;
-  }
-}
-
-/* ==========================================================
-   EXTRA SMALL MOBILE
-   (320px - 479px)
-========================================================== */
-
-@media (max-width: 479px) {
-  .hero {
-    width: 101%;
-    padding-top: 90px;
-  }
-
-  .hero-left h1 {
-    font-size: 1.7rem;
-  }
-
-  .hero-left p {
-    font-size: 13px;
-
-    line-height: 1.6;
-  }
-
-  .hero-tagline {
-    padding: 8px 14px;
-  }
-
-  .hero-features div {
-    font-size: 13px;
-  }
-
-  .hero-buttons {
-    gap: 12px;
-  }
-
-  .btn {
-    width: 100%;
-    font-size: 13px;
-    padding: 12px;
-  }
-
-  .hero-video {
-    object-position: center;
-  }
-}
-
-/* ==========================================================
-   VERY SMALL DEVICES
-   (Below 320px)
-========================================================== */
-
-@media (max-width: 319px) {
-  .hero {
-    width: 100%;
-    padding: 80px 10px 40px;
-  }
-
-  .hero-left h1 {
-    font-size: 1.5rem;
-  }
-
-  .hero-left p {
-    font-size: 12px;
-  }
-
-  .hero-features div {
-    padding: 12px;
-    font-size: 12px;
-  }
-
-  .btn {
-    font-size: 12px;
+    line-height: 1.5;
   }
 }
