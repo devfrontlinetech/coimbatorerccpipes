@@ -7,7 +7,7 @@
   .footer-radial-section {
     display: block;
     position: fixed;
-    bottom: -31px;
+    bottom: -60px;
     left: 0;
     width: 100%;
     height: 110px;
@@ -18,7 +18,7 @@
 
   .corepipe-radial-menu {
     position: fixed;
-    bottom: 10px;
+    bottom: 7px;
     left: 50%;
     transform: translateX(-50%);
     width: 260px;
@@ -45,14 +45,14 @@
     z-index: 10;
   }
   .menu-toggle:hover {
-    background: #ff0000;
+    background: #0033ff;
   }
 
   /* MENU ITEMS */
 
   .menu-item {
     position: absolute;
-    bottom: 10px;
+    bottom: 25px;
     left: 50%;
     transform: translateX(-50%);
     width: 60px;
@@ -76,7 +76,9 @@
     font-size: 10px;
   }
   .menu-item:hover{
-    background: #740000;
+    background: #f2f2f2;
+    border: 1px solid #f59e0b;
+    color: #0f172a;
   }
 
   /* ACTIVE STATE */
