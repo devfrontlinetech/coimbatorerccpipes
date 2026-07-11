@@ -34,7 +34,7 @@ function Bottomnav({ onMenuClick }) {
 
         <button
           className="menu-item item2"
-          onClick={() => onMenuClick("product")}
+          onClick={() => onMenuClick("products")}
         >
           <FaBoxOpen />
           {/* <span>Products</span> */}
