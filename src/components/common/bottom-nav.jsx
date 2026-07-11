@@ -3,14 +3,13 @@ import "../../assets/css/common/bottom-nav.css";
 
 import {
   FaHome,
-  FaShoppingCart,
-  FaBriefcase,
-  FaUsers,
-  FaEnvelopeOpenText,
+  FaBoxOpen,
+  FaIndustry,
+  FaProjectDiagram,
+  FaPhoneAlt,
   FaWhatsapp,
   FaBars,
   FaTimes,
-  FaPhoneAlt,
 } from "react-icons/fa";
 
 function Bottomnav({ onMenuClick }) {
@@ -28,7 +27,6 @@ function Bottomnav({ onMenuClick }) {
           {open ? <FaTimes /> : <FaBars />}
         </button>
 
-        {/* Menu Items with new icons */}
         <button className="menu-item item1" onClick={() => onMenuClick("home")}>
           <FaHome />
           {/* <span>Home</span> */}
@@ -36,9 +34,9 @@ function Bottomnav({ onMenuClick }) {
 
         <button
           className="menu-item item2"
-          onClick={() => onMenuClick("products")}
+          onClick={() => onMenuClick("product")}
         >
-          <FaShoppingCart />
+          <FaBoxOpen />
           {/* <span>Products</span> */}
         </button>
 
@@ -46,30 +44,30 @@ function Bottomnav({ onMenuClick }) {
           className="menu-item item3"
           onClick={() => onMenuClick("industries")}
         >
-          <FaBriefcase />
-          {/* <span>Projects</span> */}
+          <FaIndustry />
+          {/* <span>Services</span> */}
         </button>
 
         <button
           className="menu-item item4"
           onClick={() => onMenuClick("projects")}
         >
-          <FaUsers />
-          {/* <span>Clients</span> */}
+          <FaProjectDiagram />
+          {/* <span>Gallery</span> */}
         </button>
 
         <button
           className="menu-item item5"
           onClick={() => onMenuClick("contact")}
         >
-          <FaEnvelopeOpenText />
-          {/* <span>Contact</span> */}
+          <FaPhoneAlt />
+          {/* <span>Quote</span> */}
         </button>
       </div>
 
       {/* Floating Buttons */}
       <a
-        href="https://wa.me/1234567890"
+        href="https://wa.me/ 94865 44451"
         target="_blank"
         rel="noopener noreferrer"
         className="whatsapp-btn"

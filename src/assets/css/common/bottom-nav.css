@@ -1,343 +1,150 @@
-/* ==========================================================
-   Mobile Bottom Navigation / Radial Menu
-========================================================== */
-
 .footer-radial-section {
   display: none;
 }
 
-/* ==========================================================
-   Tablet & Mobile
-========================================================== */
-
+/* Show only mobile + tablet */
 @media (max-width: 768px) {
   .footer-radial-section {
     display: block;
     position: fixed;
+    bottom: -31px;
     left: 0;
-    bottom: 0;
     width: 100%;
-    height: 95px;
-    background: linear-gradient(180deg, #d4d4d4, #8c8c8c);
-    backdrop-filter: blur(10px);
+    height: 84px;
+    background: linear-gradient(180deg, #b8b8b8, #6e6e6e);
     z-index: 998;
-    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.18);
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.25);
   }
-
-  /* =============================
-      Radial Menu Container
-============================= */
 
   .corepipe-radial-menu {
     position: fixed;
-
+    bottom: 10px;
     left: 50%;
-    bottom: 0;
-
     transform: translateX(-50%);
-
-    width: 280px;
-    height: 190px;
-
+    width: 260px;
+    height: 200px;
     z-index: 999;
-
-    pointer-events: none;
   }
 
-  .corepipe-radial-menu.active {
-    pointer-events: auto;
-  }
-
-  /* =============================
-      Center Button
-============================= */
+  /* CENTER BUTTON */
 
   .menu-toggle {
     position: absolute;
-
+    bottom: 26px;
     left: 50%;
-    bottom: 18px;
-
     transform: translateX(-50%);
-
-    width: 72px;
-    height: 72px;
-
-    border: none;
-
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
-
-    background: #05123f;
-
-    color: #fff;
-
-    font-size: 22px;
-
+    background: #f00d0d;
+    color: white;
+    border: none;
+    font-size: 20px;
     cursor: pointer;
-
-    transition: 0.35s;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+    z-index: 10;
   }
-
   .menu-toggle:hover {
-    background: #0a4cff;
-
-    transform: translateX(-50%) scale(1.05);
+    background: #be0000;
   }
 
-  .corepipe-radial-menu.active .menu-toggle {
-    transform: translateX(-50%) rotate(45deg);
-  }
-
-  /* =============================
-        Menu Items
-============================= */
+  /* MENU ITEMS */
 
   .menu-item {
     position: absolute;
-
+    bottom: 10px;
     left: 50%;
-    bottom: 22px;
-
-    transform: translateX(-50%) scale(0.3);
-
+    transform: translateX(-50%);
     width: 60px;
     height: 60px;
-
     border-radius: 50%;
-
-    background: #08123d;
-
-    color: #fff;
-
+    background: #fd3636;
+    color: rgb(255, 255, 255);
     border: none;
-
     display: flex;
-
     flex-direction: column;
-
-    justify-content: center;
-
     align-items: center;
-
-    text-decoration: none;
-
-    font-size: 15px;
-
+    justify-content: center;
+    font-size: 14px;
     opacity: 0;
-
     pointer-events: none;
-
-    transition:
-      transform 0.35s ease,
-      opacity 0.35s ease,
-      background 0.3s;
-
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
-  }
-
-  .menu-item svg {
-    font-size: 18px;
-
-    margin-bottom: 2px;
+    transition: all 0.35s ease;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.25);
   }
 
   .menu-item span {
     font-size: 10px;
-
-    font-weight: 600;
   }
-
   .menu-item:hover {
-    background: #fff;
-
-    color: #f59e0b;
-
-    border: 1px solid #f59e0b;
-
-    transform: scale(1.08);
+    background: white;
+    border: 1px solid #ff0000;
+    color: #ff0000;
   }
 
-  /* =============================
-        Active Menu
-============================= */
+  /* ACTIVE STATE */
 
   .corepipe-radial-menu.active .menu-item {
     opacity: 1;
-
     pointer-events: auto;
   }
 
-  /* Arc Positions */
+  /* ARC POSITIONS */
 
   .corepipe-radial-menu.active .item1 {
-    transform: translate(-145px, -45px);
+    transform: translate(-160px, -40px);
   }
 
   .corepipe-radial-menu.active .item2 {
-    transform: translate(-90px, -95px);
+    transform: translate(-100px, -80px);
   }
 
   .corepipe-radial-menu.active .item3 {
-    transform: translateX(-50%) translateY(-120px);
+    transform: translateX(-50%) translateY(-100px);
   }
 
   .corepipe-radial-menu.active .item4 {
-    transform: translate(30px, -95px);
+    transform: translate(40px, -80px);
   }
 
   .corepipe-radial-menu.active .item5 {
-    transform: translate(85px, -45px);
+    transform: translate(100px, -40px);
   }
 
-  /* =============================
-      WhatsApp Button
-============================= */
+  /* FLOAT BUTTONS */
 
   .whatsapp-btn {
     position: fixed;
-
-    right: 18px;
-
-    bottom: 18px;
-
-    width: 58px;
-    height: 58px;
-
-    border-radius: 50%;
-
+    right: 20px;
+    bottom: 14px;
+    width: 55px;
+    height: 55px;
     background: #25d366;
-
-    color: #fff;
-
+    color: white;
+    border-radius: 50%;
     display: flex;
-
-    align-items: center;
-
     justify-content: center;
-
+    align-items: center;
+    font-size: 26px;
     text-decoration: none;
-
-    font-size: 28px;
-
     z-index: 999;
-
-    transition: 0.3s;
-
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
   }
-
-  .whatsapp-btn:hover {
-    transform: translateY(-3px);
-
-    background: #1ebd57;
-  }
-
-  /* =============================
-         Call Button
-============================= */
 
   .call-btn {
     position: fixed;
-
-    left: 18px;
-
-    bottom: 18px;
-
-    width: 58px;
-    height: 58px;
-
-    border-radius: 50%;
-
+    left: 20px;
+    bottom: 14px;
+    width: 55px;
+    height: 55px;
     background: #0d5db8;
-
-    color: #fff;
-
+    color: white;
+    border-radius: 50%;
     display: flex;
-
-    align-items: center;
-
     justify-content: center;
-
+    align-items: center;
+    font-size: 22px;
     text-decoration: none;
-
-    font-size: 24px;
-
     z-index: 999;
-
-    transition: 0.3s;
-
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-  }
-
-  .call-btn:hover {
-    transform: translateY(-3px);
-
-    background: #084b95;
-  }
-
-  /* Safe Area (iPhone) */
-
-  @supports (padding: max(0px)) {
-    .footer-radial-section {
-      padding-bottom: env(safe-area-inset-bottom);
-    }
-
-    .menu-toggle {
-      bottom: calc(18px + env(safe-area-inset-bottom));
-    }
-
-    .call-btn {
-      bottom: calc(18px + env(safe-area-inset-bottom));
-    }
-
-    .whatsapp-btn {
-      bottom: calc(18px + env(safe-area-inset-bottom));
-    }
-  }
-}
-
-/* ==========================================================
-   Small Phones
-========================================================== */
-
-@media (max-width: 480px) {
-  .corepipe-radial-menu {
-    width: 250px;
-  }
-
-  .menu-toggle {
-    width: 66px;
-    height: 66px;
-  }
-
-  .menu-item {
-    width: 54px;
-    height: 54px;
-  }
-
-  .corepipe-radial-menu.active .item1 {
-    transform: translate(-125px, -40px);
-  }
-
-  .corepipe-radial-menu.active .item2 {
-    transform: translate(-80px, -85px);
-  }
-
-  .corepipe-radial-menu.active .item3 {
-    transform: translateX(-50%) translateY(-110px);
-  }
-
-  .corepipe-radial-menu.active .item4 {
-    transform: translate(25px, -85px);
-  }
-
-  .corepipe-radial-menu.active .item5 {
-    transform: translate(75px, -40px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
   }
 }
