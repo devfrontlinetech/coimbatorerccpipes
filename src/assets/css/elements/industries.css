@@ -1,0 +1,172 @@
+/* =========================================
+   Industries Section - Premium Infrastructure Style
+   ========================================= */
+
+:root {
+  --ind-bg: #ffffff; /* Pure clean white to contrast with product section */
+  --ind-surface: #f8fafc; /* Ultra-soft slate surface for cards */
+  --ind-text-main: #0f172a; /* Deep industrial slate primary */
+  --ind-text-muted: #475569; /* Clean secondary read body text */
+  --ind-accent: #ed9a01; /* Professional engineering blue */
+  --ind-accent-light: #e0f2fe; /* Soft blue badge backdrop */
+  --ind-border: #e2e8f0; /* Structured clean layout lines */
+  --ind-radius: 12px;
+  --ind-radius-sm: 8px;
+  --ind-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  --ind-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+}
+
+/* Base Layout Wrapper */
+.industries {
+  background-color: var(--ind-bg);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 5.5rem 1.5rem;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+}
+
+/* Header Architecture */
+.industries-header {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 4rem auto;
+}
+
+.industries-header h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--ind-text-main);
+  letter-spacing: -0.03em;
+  margin-bottom: 0.85rem;
+  position: relative;
+}
+
+.industries-header p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--ind-text-muted);
+}
+
+/* Grid Layout Matrix */
+.industries-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+/* The Professional Sector Card */
+.industry-card {
+  background-color: var(--ind-surface);
+  border: 1px solid var(--ind-border);
+  border-radius: var(--ind-radius);
+  padding: 2.25rem 2rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--ind-shadow);
+  transition: var(--ind-transition);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Hidden decorative top indicator bar that reveals on hover */
+.industry-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: var(--ind-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: var(--ind-transition);
+}
+
+/* Card Interaction Overrides */
+.industry-card:hover {
+  transform: translateY(-5px);
+  background-color: #ffffff;
+  border-color: rgba(2, 132, 199, 0.25);
+  box-shadow:
+    0 20px 25px -5px rgba(15, 23, 42, 0.06),
+    0 8px 10px -6px rgba(15, 23, 42, 0.02);
+}
+
+.industry-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* Geometric Icon Compartment */
+.industry-icon {
+  width: 56px;
+  height: 56px;
+  background-color: var(--ind-accent-light);
+  color: var(--ind-accent);
+  border-radius: var(--ind-radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  transition: var(--ind-transition);
+}
+
+/* React Icon Specific Sizing */
+.industry-icon svg {
+  font-size: 1.5rem;
+  transition: var(--ind-transition);
+}
+
+/* Smooth Icon pop transformation inside the active card */
+.industry-card:hover .industry-icon {
+  background-color: var(--ind-accent);
+  color: #ffffff;
+  transform: rotate(-4deg) scale(1.05);
+}
+
+/* Title Elements */
+.industry-card h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--ind-text-main);
+  margin: 0 0 0.75rem 0;
+  letter-spacing: -0.01em;
+  line-height: 1.4;
+}
+
+/* Body Narrative text */
+.industry-card p {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--ind-text-muted);
+  margin: 0;
+}
+
+/* =========================================
+   Responsive Viewport Management
+   ========================================= */
+
+@media screen and (max-width: 992px) {
+  .industries-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .industries {
+    padding: 4rem 1.25rem;
+  }
+
+  .industries-header h2 {
+    font-size: 2rem;
+  }
+
+  .industry-card {
+    padding: 1.75rem 1.5rem;
+  }
+}

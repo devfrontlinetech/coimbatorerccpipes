@@ -1,0 +1,240 @@
+/* ========== Footer Main Layout Configuration  ========= */
+
+.footer {
+  background-color: #0f172a; /* Deep slate dark background */
+  color: #94a3b8; /* Muted slate text for higher premium contrast */
+  padding: 80px 0 0 0;
+  font-family: inherit;
+  border-top: 2px solid #1e293b;
+}
+
+.footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+
+  /* Modern CSS Grid setup for seamless multi-column design */
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.2fr;
+  gap: 40px;
+}
+
+/* ========== Column Typography & Layout Structure  ======== */
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-column h3 {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Decorative Amber bottom bar under headings */
+.footer-column h3::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 35px;
+  height: 2px;
+  background-color: #f59e0b;
+}
+
+.footer-column p {
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 20px 0 24px 0;
+}
+
+/* Lists styling */
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 12px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+/* Core Navigation Links Inside Footer */
+.footer-column ul li a {
+  color: #94a3b8;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.footer-column ul li a:hover {
+  color: #f59e0b;
+  transform: translateX(5px); /* Interactive slide micro-animation */
+}
+
+/* Dynamic fallback for non-link item text list (Our Products) */
+.footer-column ul li:not(:has(a)) {
+  color: #94a3b8;
+}
+.footer-column ul li:not(:has(a)):hover {
+  color: #ffffff;
+  padding-left: 5px;
+}
+
+/* ====== Logo & Social Media Icon Group  ====== */
+
+.concretepipe-logo-img {
+  max-width: 200px;
+  height: auto;
+  cursor: pointer;
+  object-fit: contain;
+  transition: opacity 0.3s ease;
+}
+
+.concretepipe-logo-img:hover {
+  opacity: 0.85;
+}
+
+.footer-social {
+  display: flex;
+  gap: 12px;
+  margin-top: auto; /* Pushes social icons to line up horizontally if text changes */
+}
+
+.footer-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: #1e293b;
+  color: #ffffff;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-social a:hover {
+  background-color: #f59e0b;
+  color: #0f172a;
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+}
+
+/* ======== Contact Elements Block ====== */
+
+.footer-contact {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 20px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.footer-contact svg {
+  color: #f59e0b;
+  font-size: 18px;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.footer-contact span {
+  color: #94a3b8;
+}
+
+/* ==========================================================================
+   Bottom Sub-Footer (Copyright Section)
+   ========================================================================== */
+
+.footer-bottom {
+  margin-top: 60px;
+  padding: 24px 40px;
+  border-top: 1px solid #1e293b;
+  text-align: center;
+}
+
+.copyright-text {
+  font-size: 14px;
+  color: #64748b;
+  margin: 0;
+}
+
+.copyright-text a {
+  color: #f59e0b;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.copyright-text a:hover {
+  text-decoration: underline;
+  color: #d97706;
+}
+
+/* ==========================================================================
+   RESPONSIVE MEDIA QUERIES (Fluid Layout)
+   ========================================================================== */
+
+/* Landscape Tablets & Smaller Desktops (Under 1024px) */
+@media (max-width: 1024px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr; /* Switch to balanced 2x2 double layout grid */
+    gap: 48px 32px;
+    padding: 0 32px;
+  }
+
+  .footer-social {
+    margin-top: 16px; /* Disables flex pushing for grid rows */
+  }
+}
+
+/* Mobile Devices & Small Portrait Tablets (Under 768px) */
+@media (max-width: 768px) {
+  .footer {
+    padding: 60px 0 0 0;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr; /* Stack everything linearly into one crisp column */
+    gap: 40px;
+    padding: 0 24px;
+  }
+
+  .footer-column h3 {
+    margin-bottom: 20px;
+  }
+
+  .footer-bottom {
+    margin-top: 48px;
+    padding: 24px 20px;
+  }
+  .copyright-text {
+    line-height: 1.6;
+    font-size: 12px;
+    margin-bottom: 100px;
+  }
+}
+
+/* Extra Small Smartphones (Under 480px) */
+@media (max-width: 480px) {
+  .footer-container {
+    padding: 0 16px;
+  }
+
+  .concretepipe-logo-img {
+    max-width: 170px; /* Slight scale down to avoid text overlap */
+  }
+
+  .copyright-text {
+    line-height: 1.6;
+    font-size: 8px;
+  }
+}

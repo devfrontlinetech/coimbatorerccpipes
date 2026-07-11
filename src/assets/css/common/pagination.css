@@ -1,0 +1,97 @@
+/* =========================
+   PAGINATION
+========================= */
+
+.pagination-wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+/* =========================
+   PAGE GROUP
+========================= */
+
+.pagination-pages {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.pagination-btn,
+.pagination-arrow {
+  min-width: 46px;
+  height: 46px;
+  border: 1px solid #dbe4f0;
+  background: #ffffff;
+  color: #334155;
+  border-radius: 14px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+  padding: 0 18px;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+}
+
+/* =========================
+   HOVER
+========================= */
+
+.pagination-btn:hover,
+.pagination-arrow:hover {
+  background: #2563eb;
+  color: #ffffff;
+  border-color: #2563eb;
+  transform: translateY(-2px);
+}
+
+/* =========================
+   ACTIVE BUTTON
+========================= */
+
+.pagination-btn.active {
+  background: #1e3a8a;
+  color: #ffffff;
+  border-color: #1e3a8a;
+}
+
+/* =========================
+   DISABLED
+========================= */
+
+.pagination-arrow:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  .pagination-wrapper {
+    gap: 12px;
+  }
+
+  .pagination-pages {
+    gap: 8px;
+  }
+
+  .pagination-btn,
+  .pagination-arrow {
+    min-width: 42px;
+    height: 42px;
+    font-size: 13px;
+    border-radius: 12px;
+  }
+}

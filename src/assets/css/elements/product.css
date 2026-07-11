@@ -1,0 +1,253 @@
+/* =========================================
+   Products Section - Modern Industrial Style
+   ========================================= */
+
+:root {
+  --prod-bg: #f8fafc; /* Clean structural light background */
+  --prod-surface: #ffffff; /* Card surface */
+  --prod-text-main: #2a1d0f; /* Deep slate primary text */
+  --prod-text-muted: #64748b; /* Soft secondary text */
+  --prod-accent: #0284c7; /* Professional engineering blue */
+  --prod-accent-hover: #0369a1;
+  --prod-star: #eab308; /* Golden amber rating stars */
+  --prod-border: #e2e8f0; /* Thin crisp construction borders */
+  --prod-radius-lg: 12px;
+  --prod-radius-sm: 6px;
+  --prod-shadow:
+    0 4px 6px -1px rgba(15, 23, 42, 0.05), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
+  --prod-shadow-hover:
+    0 20px 25px -5px rgba(15, 23, 42, 0.08),
+    0 8px 10px -6px rgba(15, 23, 42, 0.03);
+  --prod-transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Section Wrapper */
+.products {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 5rem 1.5rem;
+  background-color: var(--prod-bg);
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+}
+
+/* Header Styling */
+.products-header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 3.5rem auto;
+}
+
+.products-header h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--prod-text-main);
+  letter-spacing: -0.75px;
+  margin-bottom: 0.75rem;
+}
+
+.products-header p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--prod-text-muted);
+}
+
+/* Smart Product Grid */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* The Trending Product Card */
+.product-card {
+  background-color: var(--prod-surface);
+  border: 1px solid var(--prod-border);
+  border-radius: var(--prod-radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--prod-shadow);
+  transition: var(--prod-transition);
+}
+
+/* Hover States for Card */
+.product-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(2, 132, 199, 0.3);
+  box-shadow: var(--prod-shadow-hover);
+}
+
+/* Image Container */
+.product-image-box {
+  width: 100%;
+  height: 210px;
+  background-color: #f1f5f9;
+  overflow: hidden;
+  position: relative;
+}
+
+.product-image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--prod-transition);
+}
+
+/* Image zoom on hover */
+.product-card:hover .product-image-box img {
+  transform: scale(1.06);
+}
+
+/* Card Content Compartment */
+.product-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+/* Category Label */
+.product-category {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--prod-accent);
+  background-color: #e0f2fe;
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--prod-radius-sm);
+  margin-bottom: 0.75rem;
+}
+
+/* Product Title */
+.product-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--prod-text-main);
+  margin: 0 0 0.5rem 0;
+  line-height: 1.3;
+}
+
+/* Rating Area */
+.product-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Auto-target svg stars inside the row */
+.product-rating svg {
+  color: var(--prod-star);
+  font-size: 0.9rem;
+}
+
+.product-rating span {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--prod-text-muted);
+  margin-left: 0.35rem;
+}
+
+/* Product Short Description */
+.product-content p {
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--prod-text-muted);
+  margin: 0 0 1.5rem 0;
+  flex-grow: 1; /* Pushes the footer to perfectly align across all cards */
+}
+
+/* Card Footer Action Block */
+.product-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--prod-border);
+  padding-top: 1rem;
+  margin-top: auto;
+}
+
+/* Pricing Tag */
+.product-price {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--prod-text-main);
+  letter-spacing: -0.5px;
+}
+
+/* Inquire / View Details Button */
+.product-btn {
+  background-color: rgb(255, 152, 34);
+  color: var(--prod-text-main);
+  border: 1px solid var(--prod-border);
+  padding: 0.5rem 1rem;
+  border-radius: var(--prod-radius-sm);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--prod-transition);
+}
+
+.product-btn:hover {
+  background-color: var(--prod-accent);
+  color: #ffffff;
+  border-color: var(--prod-accent);
+}
+
+/* =========================================
+   Load More Architecture
+   ========================================= */
+.load-more-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 4rem;
+}
+
+.load-more-btn {
+  background-color: var(--prod-surface);
+  color: var(--prod-text-main);
+  border: 1px solid var(--prod-border);
+  padding: 0.85rem 2rem;
+  border-radius: var(--prod-radius-sm);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: var(--prod-shadow);
+  transition: var(--prod-transition);
+}
+
+.load-more-btn:hover {
+  transform: translateY(-2px);
+  border-color: var(--prod-text-main);
+  box-shadow: 0 10px 15px -3px rgba(15, 23, 42, 0.05);
+}
+
+.load-more-btn:active {
+  transform: translateY(0);
+}
+
+/* =========================================
+   Responsive Breakpoints
+   ========================================= */
+
+@media screen and (max-width: 768px) {
+  .products {
+    padding: 3.5rem 1rem;
+  }
+  .products-header h2 {
+    font-size: 2rem;
+  }
+  .products-grid {
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+}

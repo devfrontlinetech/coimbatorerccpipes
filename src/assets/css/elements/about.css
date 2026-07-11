@@ -1,0 +1,520 @@
+/* ==== ABOUT SECTION ===== */
+
+.about {
+  padding: 100px 20px;
+  background: #f8fafc;
+  overflow: hidden;
+}
+
+.about-container {
+  max-width: 1300px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 70px;
+  align-items: center;
+}
+
+/* ==========================================
+   IMAGE SECTION
+========================================== */
+
+.about-image-section {
+  position: relative;
+}
+
+.about-image {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+.experience-box {
+  position: absolute;
+  bottom: 30px;
+  left: -20px;
+  background: #f59e0b;
+  color: #fff;
+  padding: 25px 35px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(245, 158, 11, 0.35);
+}
+
+.experience-box h3 {
+  font-size: 2.5rem;
+  margin-bottom: 5px;
+}
+
+.experience-box span {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* ===== CONTENT SECTION========== */
+
+.about-tag {
+  display: inline-block;
+  padding: 10px 20px;
+  background: rgba(245, 158, 11, 0.12);
+  color: #f59e0b;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.about-content h3 {
+  font-size: 3rem;
+  line-height: 1.2;
+  color: #111827;
+  margin-bottom: 25px;
+}
+
+.about-content h3 span {
+  color: #f59e0b;
+}
+
+.about-content p {
+  color: #64748b;
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 18px;
+}
+
+/* ==========================================
+   FEATURES
+========================================== */
+
+.about-features {
+  margin-top: 35px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.feature-item {
+  padding: 15px 18px;
+  background: #fff;
+  border-radius: 10px;
+  font-weight: 500;
+  color: #1f2937;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+  transition: 0.3s;
+}
+
+.feature-item:hover {
+  transform: translateY(-3px);
+}
+
+/* ==========================================
+   STATS
+========================================== */
+
+.about-stats {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.stat-box {
+  background: #fff;
+  padding: 25px 15px;
+  text-align: center;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+}
+
+.stat-box:hover {
+  transform: translateY(-5px);
+}
+
+.stat-box h3 {
+  font-size: 2rem;
+  color: #f59e0b;
+  margin-bottom: 8px;
+}
+
+.stat-box span {
+  color: #64748b;
+  font-size: 15px;
+}
+
+/* ==========================================
+   BUTTON
+========================================== */
+
+.about-btn {
+  display: inline-block;
+  margin-top: 35px;
+  padding: 15px 35px;
+  background: #f59e0b;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.about-btn:hover {
+  background: #d97706;
+  transform: translateY(-2px);
+}
+
+/* =====================================================
+   LARGE MONITOR / 4K VIEW (1600px+)
+===================================================== */
+
+@media (min-width: 1600px) {
+  .about {
+    padding: 140px 40px;
+  }
+
+  .about-container {
+    max-width: 1600px;
+    gap: 100px;
+  }
+
+  .about-image {
+    height: 700px;
+  }
+
+  .about-content h2 {
+    font-size: 4rem;
+  }
+
+  .about-content p {
+    font-size: 1.15rem;
+  }
+
+  .experience-box {
+    left: -30px;
+    bottom: 50px;
+
+    padding: 35px 45px;
+  }
+
+  .experience-box h3 {
+    font-size: 3rem;
+  }
+
+  .feature-item {
+    font-size: 17px;
+    padding: 20px;
+  }
+
+  .stat-box h3 {
+    font-size: 2.5rem;
+  }
+}
+
+/* =====================================================
+   DESKTOP / LAPTOP
+   1200px - 1599px
+===================================================== */
+
+@media (max-width: 1599px) {
+  .about-container {
+    max-width: 1200px;
+    gap: 50px;
+  }
+
+  .about-image {
+    height: 550px;
+  }
+
+  .about-content h2 {
+    font-size: 3.2rem;
+  }
+}
+
+/* =====================================================
+   SMALL LAPTOP
+   992px - 1199px
+===================================================== */
+
+@media (max-width: 1199px) {
+  .about {
+    padding: 90px 30px;
+  }
+
+  .about-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+  }
+
+  .about-image {
+    height: 500px;
+  }
+
+  .about-content h2 {
+    font-size: 2.7rem;
+  }
+
+  .about-features {
+    gap: 12px;
+  }
+
+  .feature-item {
+    font-size: 14px;
+  }
+
+  .about-stats {
+    gap: 15px;
+  }
+
+  .stat-box {
+    padding: 20px 10px;
+  }
+}
+
+/* =====================================================
+   TABLET LANDSCAPE
+   769px - 991px
+===================================================== */
+
+@media (max-width: 991px) {
+  .about {
+    padding: 80px 25px;
+  }
+
+  .about-container {
+    grid-template-columns: 1fr;
+    gap: 50px;
+    text-align: center;
+  }
+
+  .about-image-section {
+    max-width: 650px;
+    margin: auto;
+  }
+
+  .about-image {
+    height: 500px;
+  }
+
+  .experience-box {
+    left: 20px;
+    bottom: 20px;
+  }
+
+  .about-content {
+    max-width: 750px;
+    margin: auto;
+  }
+
+  .about-content h2 {
+    font-size: 2.8rem;
+  }
+
+  .about-features {
+    max-width: 600px;
+    margin: 35px auto;
+  }
+
+  .about-stats {
+    max-width: 650px;
+    margin: 40px auto;
+  }
+
+  .about-btn {
+    margin-top: 25px;
+  }
+}
+
+/* =====================================================
+   TABLET PORTRAIT
+   600px - 768px
+===================================================== */
+
+@media (max-width: 768px) {
+  .about {
+    padding: 70px 20px;
+  }
+
+  .about-image {
+    height: 420px;
+  }
+
+  .experience-box {
+    padding: 18px 25px;
+  }
+
+  .experience-box h3 {
+    font-size: 2rem;
+  }
+
+  .experience-box span {
+    font-size: 12px;
+  }
+
+  .about-tag {
+    font-size: 13px;
+  }
+
+  .about-content h2 {
+    font-size: 2.2rem;
+    line-height: 1.25;
+  }
+
+  .about-content p {
+    font-size: 15px;
+  }
+
+  .about-features {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-item {
+    padding: 15px;
+  }
+
+  .about-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-box {
+    max-width: 350px;
+    width: 100%;
+    margin: auto;
+  }
+
+  .about-btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+/* =====================================================
+   MOBILE
+   480px - 599px
+===================================================== */
+
+@media (max-width: 599px) {
+  .about {
+    padding: 60px 15px;
+  }
+
+  .about-image {
+    height: 350px;
+    border-radius: 15px;
+  }
+
+  .experience-box {
+    position: relative;
+
+    left: 0;
+    bottom: auto;
+    margin-top: 20px;
+  }
+
+  .about-content h2 {
+    font-size: 1.9rem;
+  }
+
+  .about-content p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .about-features {
+    margin-top: 25px;
+  }
+
+  .feature-item {
+    font-size: 14px;
+  }
+
+  .stat-box h3 {
+    font-size: 1.8rem;
+  }
+
+  .about-btn {
+    padding: 13px 25px;
+  }
+}
+
+/* =====================================================
+   EXTRA SMALL MOBILE
+   BELOW 480px
+===================================================== */
+
+@media (max-width: 479px) {
+  .about {
+    padding: 50px 12px;
+  }
+
+  .about-image {
+    height: 280px;
+  }
+
+  .about-content h2 {
+    font-size: 1.6rem;
+  }
+
+  .about-content p {
+    font-size: 13px;
+  }
+
+  .about-tag {
+    padding: 8px 15px;
+  }
+
+  .experience-box {
+    padding: 15px;
+  }
+
+  .experience-box h3 {
+    font-size: 1.7rem;
+  }
+
+  .feature-item {
+    font-size: 13px;
+    padding: 13px;
+  }
+
+  .stat-box {
+    padding: 18px 10px;
+  }
+
+  .stat-box span {
+    font-size: 13px;
+  }
+
+  .about-btn {
+    font-size: 14px;
+    width: 100%;
+  }
+}
+
+/* =====================================================
+   VERY SMALL DEVICES
+   BELOW 320px
+===================================================== */
+
+@media (max-width: 319px) {
+  .about-image {
+    height: 230px;
+  }
+
+  .about-content h2 {
+    font-size: 1.4rem;
+  }
+
+  .about-content p {
+    font-size: 12px;
+  }
+
+  .feature-item {
+    font-size: 12px;
+  }
+
+  .about-btn {
+    font-size: 12px;
+  }
+}

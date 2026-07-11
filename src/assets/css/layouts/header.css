@@ -1,0 +1,273 @@
+.concretepipe-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  transition: all 0.3s ease;
+  background: transparent;
+}
+
+.concretepipe-header.scrolled {
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.concretepipe-navbar {
+  max-width: 1400px;
+  margin: auto;
+  padding: 3px 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* LOGO */
+
+.concretepipe-logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 10px 0;
+}
+
+.concretepipe-logo-img {
+  width: 200px;
+  cursor: pointer;
+}
+
+.concretepipe-location {
+  display: flex;
+  /* flex-direction: column; */
+  gap: 20px;
+}
+
+.location-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  color: #fff;
+  font-size: 14px;
+}
+
+.location-icon,
+.phone-icon {
+  color: #f59e0b;
+  border: 1px solid #f59e0b;
+  padding: 6px;
+  border-radius: 50%;
+}
+.location-icon:hover,
+.phone-icon:hover {
+  background: #f59e0b;
+  color: #111827;
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
+
+/* NAVIGATION */
+
+.concretepipe-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  list-style: none;
+}
+
+.concretepipe-nav-link-btn {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+}
+
+.concretepipe-nav-link-btn::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+
+  width: 0%;
+  height: 2px;
+
+  background: #f59e0b;
+  transition: 0.3s;
+}
+
+.concretepipe-nav-link-btn:hover::after {
+  width: 100%;
+}
+
+.concretepipe-nav-link-btn:hover {
+  color: #f59e0b;
+}
+
+.header-quote-btn {
+  background-color: #f59e0b;
+  border: none;
+  color: #0f172a;
+  padding: 10px 22px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.header-quote-btn:hover {
+  background-color: #d97706;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+}
+/* ==============================
+   HAMBURGER MENU
+================================ */
+
+.header-menu {
+  display: none;
+
+  width: 42px;
+  height: 42px;
+
+  border-radius: 50%;
+
+  background: #111;
+
+  color: white;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 20px;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+
+  z-index: 3000;
+}
+
+.header-menu:hover {
+  background: #c87920;
+
+  transform: rotate(10deg);
+}
+/* ======= RESPONSIVE MEDIA QUERIES ====== */
+
+/* 1. Large Screen Adjustments (Shrink paddings and gaps slightly) */
+@media (max-width: 1200px) {
+  .concretepipe-navbar {
+    padding: 3px 20px;
+  }
+  .concretepipe-nav-links {
+    gap: 20px;
+  }
+  .concretepipe-location {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .concretepipe-location {
+    display: none;
+  }
+}
+
+@media (max-width: 860px) {
+  .header-menu {
+    display: flex;
+  }
+
+  .concretepipe-navbar {
+    padding: 10px 20px;
+  }
+
+  .concretepipe-logo-img {
+    width: 65px;
+  }
+
+  .header-right {
+    margin-left: auto;
+    margin-right: 15px;
+  }
+
+  .concretepipe-nav-links {
+    position: absolute;
+    top: 74%;
+    right: 0;
+    width: 46%;
+    background: #0f172a;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 0;
+
+    /* Smooth height slide-down mechanism */
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  /* Triggered via your React 'menuOpen' state class change */
+  .concretepipe-nav-links.active {
+    max-height: 400px; /* Secure height boundary to contain your links */
+    opacity: 1;
+    visibility: visible;
+    padding: 15px 0;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+  }
+
+  .concretepipe-nav-links li {
+    width: 100%;
+  }
+
+  /* Large, easily clickable block targets for fingers */
+  .concretepipe-nav-link-btn {
+    display: block;
+    width: 100%;
+    padding: 16px 24px;
+    text-align: left;
+    font-size: 18px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    transition:
+      background 0.2s,
+      color 0.2s;
+  }
+
+  .concretepipe-nav-link-btn:hover {
+    background: rgba(
+      245,
+      158,
+      11,
+      0.08
+    ); /* Soft amber background flash on tap */
+    padding-left: 30px; /* Slight offset interactive animation on hover/tap */
+  }
+
+  /* Disable desktop absolute line animation on mobile viewports */
+  .concretepipe-nav-link-btn::after {
+    display: none;
+  }
+}
+
+/* 4. Small Mobile Adjustments (Optimize for tight screen spaces) */
+@media (max-width: 480px) {
+  /* Scale down padding and font sizes slightly so nothing truncates */
+  .header-quote-btn {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+
+  .concretepipe-logo-img {
+    width: 55px;
+  }
+}
