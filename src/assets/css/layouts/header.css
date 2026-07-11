@@ -72,8 +72,8 @@
 
 .location-icon,
 .phone-icon {
-  width: 34px;
-  height: 34px;
+  width: 15px;
+  height: 15px;
 
   display: flex;
   align-items: center;
@@ -82,7 +82,7 @@
   border-radius: 50%;
 
   color: #f59e0b;
-  border: 1px solid #f59e0b;
+  /* border: 1px solid #f59e0b; */
 
   transition: 0.3s;
 }
