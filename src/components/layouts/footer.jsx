@@ -1,214 +1,105 @@
-import React from "react";
+import React, { useState } from "react";
+import "../../assets/css/common/bottom-nav.css";
+
 import {
-  FaFacebookF,
-  FaInstagram,
-  FaLinkedinIn,
-  FaWhatsapp,
+  FaHome,
+  FaBoxOpen,
+  FaIndustry,
+  FaProjectDiagram,
   FaPhoneAlt,
-  FaEnvelope,
-  FaMapMarkerAlt,
+  FaWhatsapp,
+  FaBars,
+  FaTimes,
 } from "react-icons/fa";
 
-import logo from "../../assets/images/logo/logo.png";
-import "../../assets/css/layouts/footer.css";
-
-const Footer = () => {
-  const handleClick = (link) => {
-    const section = document.querySelector(link);
-
-    if (section) {
-      section.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
-  };
+function Bottomnav({ onMenuClick }) {
+  const [open, setOpen] = useState(false);
 
   return (
-    <footer className="footer">
-      <div className="footer-container">
-        {/* Company Info */}
-        <div className="footer-column">
-          <img
-            src={logo}
-            alt="Concrete Pipe Logo"
-            className="concretepipe-logo-img"
-            onClick={() => handleClick("#home")}
-          />
+    <div className="footer-radial-section">
+      <div className={`corepipe-radial-menu ${open ? "active" : ""}`}>
+        {/* Toggle */}
 
-          <p>
-            Leading manufacturer of RCC pipes, box culverts, precast concrete
-            products, drainage solutions, and infrastructure materials for
-            government, industrial, and commercial projects.
-          </p>
+        <button
+          className="menu-toggle"
+          onClick={() => setOpen(!open)}
+          aria-label={open ? "Close navigation menu" : "Open navigation menu"}
+          title={open ? "Close Menu" : "Open Menu"}
+        >
+          {open ? <FaTimes /> : <FaBars />}
+        </button>
 
-          <div className="footer-social">
-            <a
-              href="https://facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaFacebookF />
-            </a>
+        <button
+          className="menu-item item1"
+          onClick={() => onMenuClick("home")}
+          aria-label="Home"
+          title="Home"
+        >
+          <FaHome aria-hidden="true" />
+        </button>
 
-            <a
-              href="https://instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaInstagram />
-            </a>
+        <button
+          className="menu-item item2"
+          onClick={() => onMenuClick("products")}
+          aria-label="Products"
+          title="Products"
+        >
+          <FaBoxOpen aria-hidden="true" />
+        </button>
 
-            <a
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaLinkedinIn />
-            </a>
+        <button
+          className="menu-item item3"
+          onClick={() => onMenuClick("industries")}
+          aria-label="Industries"
+          title="Industries"
+        >
+          <FaIndustry aria-hidden="true" />
+        </button>
 
-            <a
-              href="https://wa.me/919876543210"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaWhatsapp />
-            </a>
-          </div>
-        </div>
+        <button
+          className="menu-item item4"
+          onClick={() => onMenuClick("projects")}
+          aria-label="Projects"
+          title="Projects"
+        >
+          <FaProjectDiagram aria-hidden="true" />
+        </button>
 
-        {/* Quick Links */}
-        <div className="footer-column">
-          <h3>Quick Links</h3>
-
-          <ul>
-            <li>
-              <a
-                href="#home"
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleClick("#home");
-                }}
-              >
-                Home
-              </a>
-            </li>
-
-            <li>
-              <a
-                href="#about"
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleClick("#about");
-                }}
-              >
-                About Us
-              </a>
-            </li>
-
-            <li>
-              <a
-                href="#products"
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleClick("#products");
-                }}
-              >
-                Products
-              </a>
-            </li>
-
-            <li>
-              <a
-                href="#industries"
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleClick("#industries");
-                }}
-              >
-                Industries
-              </a>
-            </li>
-
-            <li>
-              <a
-                href="#projects"
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleClick("#projects");
-                }}
-              >
-                Projects
-              </a>
-            </li>
-
-            <li>
-              <a
-                href="#contact"
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleClick("#contact");
-                }}
-              >
-                Contact
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        {/* Products */}
-        <div className="footer-column">
-          <h3>Our Products</h3>
-
-          <ul>
-            <li>RCC Pipes</li>
-            <li>NP2 Pipes</li>
-            <li>NP3 Pipes</li>
-            <li>Jack Pipes</li>
-            <li>Box Culverts</li>
-            <li>Precast Concrete Products</li>
-          </ul>
-        </div>
-
-        {/* Contact */}
-        <div className="footer-column">
-          <h3>Contact Info</h3>
-
-          <div className="footer-contact">
-            <FaMapMarkerAlt />
-            <span>
-              4, Sama layout, Cbe, Ramanathapuram, Coimbatore, Tamil Nadu 623545
-            </span>
-          </div>
-
-          <div className="footer-contact">
-            <FaPhoneAlt />
-            <span>+91 94865 44451</span>
-          </div>
-
-          <div className="footer-contact">
-            <FaEnvelope />
-            <span>info@coimbatorerccpipes.in</span>
-          </div>
-        </div>
+        <button
+          className="menu-item item5"
+          onClick={() => onMenuClick("contact")}
+          aria-label="Contact"
+          title="Contact"
+        >
+          <FaPhoneAlt aria-hidden="true" />
+        </button>
       </div>
 
-      {/* Bottom Footer */}
-      <div className="footer-bottom">
-        <p className="copyright-text">
-          Copyright {new Date().getFullYear()} RCC Pipes. Designed By{" "}
-          <a
-            href="https://frontlinetechnologies.org/"
-            rel="noreferrer"
-            target="_blank"
-          >
-            Frontline Technologies
-          </a>
-          . All Rights Reserved
-        </p>
-      </div>
-    </footer>
+      {/* WhatsApp */}
+
+      <a
+        href="https://wa.me/919486544451"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="whatsapp-btn"
+        aria-label="Chat on WhatsApp"
+        title="WhatsApp"
+      >
+        <FaWhatsapp aria-hidden="true" />
+      </a>
+
+      {/* Call */}
+
+      <a
+        href="tel:+919486544451"
+        className="call-btn"
+        aria-label="Call us"
+        title="Call"
+      >
+        <FaPhoneAlt aria-hidden="true" />
+      </a>
+    </div>
   );
-};
+}
 
-export default Footer;
+export default Bottomnav;
