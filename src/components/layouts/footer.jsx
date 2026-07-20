@@ -16,7 +16,7 @@ function Bottomnav({ onMenuClick }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="footer-radial-section">
+    <div className="footer-section">
       <div className={`corepipe-radial-menu ${open ? "active" : ""}`}>
         {/* Toggle */}
 
