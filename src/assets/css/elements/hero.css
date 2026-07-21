@@ -194,9 +194,9 @@
 ========================================================== */
 
 @media (max-width: 768px) {
-  .hero {
+  /* .hero {
     min-height: auto;
-  }
+  } */
 
   .hero-container {
     padding: 110px 20px 60px;
