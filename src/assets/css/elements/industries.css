@@ -10,15 +10,11 @@
   --ind-accent: #ed9a01;
   --ind-accent-light: #fff4de;
   --ind-border: #e2e8f0;
-
   --ind-radius: 12px;
   --ind-radius-sm: 8px;
-
   --ind-shadow:
     0 4px 6px rgba(15, 23, 42, 0.05), 0 2px 4px rgba(15, 23, 42, 0.03);
-
   --ind-shadow-hover: 0 18px 35px rgba(15, 23, 42, 0.08);
-
   --ind-transition: 0.35s ease;
 }
 
@@ -41,27 +37,21 @@ HEADER
 
 .industries-header {
   max-width: 700px;
-
   margin: 0 auto 60px;
-
   text-align: center;
 }
 
 .industries-header h2 {
   font-size: 42px;
-
   font-weight: 800;
-
   color: var(--ind-text-main);
-
   margin-bottom: 15px;
 }
 
 .industries-header p {
   color: var(--ind-text-muted);
-
   font-size: 17px;
-
+  text-align: justify;
   line-height: 1.7;
 }
 
@@ -71,9 +61,7 @@ GRID
 
 .industries-grid {
   display: grid;
-
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-
   gap: 30px;
 }
 
@@ -83,55 +71,34 @@ CARD
 
 .industry-card {
   background: var(--ind-surface);
-
   border: 1px solid var(--ind-border);
-
   border-radius: 12px;
-
   padding: 35px 30px;
-
   display: flex;
-
   flex-direction: column;
-
   transition: 0.35s;
-
   position: relative;
-
   overflow: hidden;
-
   box-shadow: var(--ind-shadow);
 }
 
 .industry-card::before {
   content: "";
-
   position: absolute;
-
   left: 0;
-
   top: 0;
-
   width: 100%;
-
   height: 4px;
-
   background: var(--ind-accent);
-
   transform: scaleX(0);
-
   transform-origin: left;
-
   transition: 0.35s;
 }
 
 .industry-card:hover {
   transform: translateY(-6px);
-
   box-shadow: var(--ind-shadow-hover);
-
   border-color: #d6e4f1;
-
   background: #fff;
 }
 
@@ -145,23 +112,14 @@ ICON
 
 .industry-icon {
   width: 60px;
-
   height: 60px;
-
   border-radius: 10px;
-
   background: var(--ind-accent-light);
-
   color: var(--ind-accent);
-
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
   margin-bottom: 25px;
-
   transition: 0.35s;
 }
 
@@ -171,9 +129,7 @@ ICON
 
 .industry-card:hover .industry-icon {
   background: var(--ind-accent);
-
   color: #fff;
-
   transform: scale(1.08);
 }
 
@@ -183,21 +139,15 @@ TEXT
 
 .industry-card h3 {
   font-size: 22px;
-
   font-weight: 700;
-
   color: var(--ind-text-main);
-
   margin-bottom: 14px;
-
   line-height: 1.4;
 }
 
 .industry-card p {
   color: var(--ind-text-muted);
-
   line-height: 1.8;
-
   flex: 1;
 }
 
@@ -222,7 +172,6 @@ TEXT
 
   .industries-grid {
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-
     gap: 24px;
   }
 }
