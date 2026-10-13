@@ -33,11 +33,11 @@ Email: ${formData.email}
 Message:
 ${formData.message}
 `;
- 
+
     window.open(
       `https://wa.me/919876543210?text=${encodeURIComponent(message)}`,
       "_blank",
-    ); 
+    );
   };
 
   return (
@@ -91,7 +91,7 @@ ${formData.message}
           </div>
 
           <div className="contact-item">
-            <FaClock /> 
+            <FaClock />
             <div>
               <h4>Working Hours</h4>
               <p>Mon - Sat : 8:00 AM - 6:00 PM</p>
@@ -112,7 +112,7 @@ ${formData.message}
             />
 
             <input
-              type="text" 
+              type="text"
               name="phone"
               placeholder="Phone Number"
               onChange={handleChange}
