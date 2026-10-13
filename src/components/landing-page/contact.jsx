@@ -33,11 +33,11 @@ Email: ${formData.email}
 Message:
 ${formData.message}
 `;
-
+ 
     window.open(
       `https://wa.me/919876543210?text=${encodeURIComponent(message)}`,
       "_blank",
-    );
+    ); 
   };
 
   return (
