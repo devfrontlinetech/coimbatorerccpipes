@@ -112,7 +112,7 @@ ${formData.message}
             />
 
             <input
-              type="text"
+              type="text" 
               name="phone"
               placeholder="Phone Number"
               onChange={handleChange}
