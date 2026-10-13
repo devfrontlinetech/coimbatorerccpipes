@@ -91,7 +91,7 @@ ${formData.message}
           </div>
 
           <div className="contact-item">
-            <FaClock />
+            <FaClock /> 
             <div>
               <h4>Working Hours</h4>
               <p>Mon - Sat : 8:00 AM - 6:00 PM</p>
