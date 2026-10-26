@@ -109,7 +109,7 @@ const Projects = () => {
             <div className="project-image">
               <img src={project.image} alt={project.title} />
             </div>
- 
+
             <div className="project-content">
               <div className="project-top">
                 <span>{project.year}</span>
