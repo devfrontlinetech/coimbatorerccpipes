@@ -112,7 +112,7 @@ const Projects = () => {
 
             <div className="project-content">
               <div className="project-top">
-                <span>{project.year}</span> 
+                <span>{project.year}</span>
                 <span>{project.location}</span>
               </div>
 
