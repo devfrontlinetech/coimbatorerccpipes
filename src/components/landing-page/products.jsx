@@ -40,7 +40,7 @@ Thank you.`;
         <p>
           Premium RCC pipes and precast concrete products manufactured to the
           highest quality standards.
-        </p>
+        </p> 
       </div>
 
       <div className="products-grid">
